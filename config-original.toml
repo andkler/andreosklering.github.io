@@ -73,6 +73,10 @@ name = "linkedin"
 url = "https://linkedin.com/in/charao"
 
 [[params.social]]
+name = "landingjobs"
+url = "https://landing.jobs/profile/125eb6472dae07b1399524"
+
+[[params.social]]
 name = "email"
 url = "mailto:thiago@charao.dev"
 

@@ -26,7 +26,7 @@ copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_
   # path = "images/rick.svg"
   # alt = "Your example logo alt text"
   # Subtitle for home
-  homeSubtitle = "Softare Engineer"
+  homeSubtitle = "Software Engineer"
 
   # Set disableReadOtherPosts to true in order to hide the links to other posts.
   disableReadOtherPosts = false
@@ -53,6 +53,10 @@ copyright = '<a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_
 [[params.social]]
 name = "linkedin"
 url = "https://linkedin.com/in/charao"
+
+[[params.social]]
+name = "landingjobs"
+url = "https://landing.jobs/profile/125eb6472dae07b1399524"
 
 [[params.social]]
 name = "email"
