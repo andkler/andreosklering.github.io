@@ -1,0 +1,341 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Career timeline - visual representation
+interface TimelineEntry {
+  year: string;
+  title: string;
+  company: string;
+  location: string;
+  type: string;
+  highlights: string[];
+  isEarly?: boolean;
+}
+
+const timeline: TimelineEntry[] = [
+  {
+    year: '2024',
+    title: 'Director of Architecture',
+    company: 'Planet',
+    location: 'Porto, Portugal',
+    type: 'leadership',
+    highlights: [
+      'Architecture direction across platform, identity, and cross-cutting capabilities',
+      'Led AI enablement across ~300 engineers → ~20% throughput uplift',
+      'Enterprise identity governance at 50K+ MAU scale (Auth0)',
+      'Established decision-making forums and architecture standards',
+    ]
+  },
+  {
+    year: '2024',
+    title: 'Senior Software Engineering Manager',
+    company: 'Planet',
+    location: 'Porto, Portugal',
+    type: 'leadership',
+    highlights: [
+      'Strategic architecture initiatives aligned with growth goals',
+      'Technical roadmaps and execution improvement',
+      'Mentored engineers and architects; raised quality standards',
+    ]
+  },
+  {
+    year: '2021',
+    title: 'Senior Software Engineer',
+    company: 'Planet',
+    location: 'Porto, Portugal',
+    type: 'engineering',
+    highlights: [
+      'High-throughput APIs and event-driven services (AWS, Java/Spring, .NET)',
+      'Improved reliability through observability and resilient designs',
+      'Automated CI/CD and containerised workloads',
+    ]
+  },
+  {
+    year: '2020',
+    title: 'Senior Software Engineer',
+    company: 'Basecone',
+    location: 'Porto, Portugal',
+    type: 'engineering',
+    highlights: [
+      'Document-processing workflows for accounting platform (OCR-heavy)',
+      'Serverless back-end with .NET + AWS Lambda/API Gateway',
+      'Python APIs and automation for engineering efficiency',
+    ]
+  },
+  {
+    year: '2018',
+    title: 'Lead Technical Consultant',
+    company: 'Farfetch',
+    location: 'Porto, Portugal',
+    type: 'consulting',
+    highlights: [
+      'Mission-critical logistics/shipping services (.NET Core)',
+      'Data-heavy systems with graph and distributed data stores',
+      'Technical leadership in cross-functional environment',
+    ]
+  },
+  {
+    year: '2017',
+    title: 'Senior Development Consultant',
+    company: 'ThoughtWorks',
+    location: 'Porto Alegre, Brazil',
+    type: 'consulting',
+    highlights: [
+      'Large-scale retail initiatives (credit card + loyalty programs)',
+      'Collaborative agile setup with US retail clients',
+    ]
+  },
+  {
+    year: '2016',
+    title: 'Senior Software Engineer',
+    company: 'Azion Technologies',
+    location: 'Porto Alegre, Brazil',
+    type: 'engineering',
+    highlights: [
+      'Platform capabilities in R&D environment',
+      'REST APIs with Python/Django',
+    ]
+  },
+  {
+    year: '2014',
+    title: 'Co-founder & Consultant',
+    company: 'Independent',
+    location: 'Brazil / Ireland',
+    type: 'consulting',
+    highlights: [
+      'Web and mobile solutions across the stack',
+      'Xamarin/C#, Azure services, full-stack web',
+    ]
+  },
+  {
+    year: '2007',
+    title: 'Senior Consultant / Technical Lead',
+    company: 'CWI Software',
+    location: 'Porto Alegre, Brazil',
+    type: 'consulting',
+    highlights: [
+      '7 years leading multiple client projects',
+      'Design, delivery quality, and mentoring',
+      '.NET, Java, SQL Server, Oracle, mobile development',
+    ]
+  },
+  {
+    year: '2007',
+    title: 'Software Developer',
+    company: 'Drogaria Mais Econômica',
+    location: 'Canoas, Brazil',
+    type: 'engineering',
+    highlights: [
+      'Built work-order system for retail maintenance teams',
+      'Reporting and operational decision-making',
+      'On-site technical operations (POS, networks, servers)',
+    ],
+    isEarly: true
+  },
+  {
+    year: '2005',
+    title: 'Software Developer',
+    company: 'Grupo Telecon Sistemas',
+    location: 'Canoas, Brazil',
+    type: 'engineering',
+    highlights: [
+      'POS solutions and databases for small retailers',
+      'Reporting and data reliability',
+    ],
+    isEarly: true
+  },
+];
+
+const skills = {
+  'Architecture': ['Technology Strategy', 'Platform Engineering', 'Operating Models', 'Governance', 'Decision Records'],
+  'Cloud & Platform': ['AWS', 'Kubernetes/EKS', 'Terraform', 'Docker', 'CI/CD'],
+  'Identity': ['Auth0', 'OAuth2/OIDC', 'SAML', 'SSO Patterns', 'IAM Governance'],
+  'Languages': ['Java/Spring', '.NET/C#', 'Python', 'TypeScript', 'Go'],
+  'AI & Data': ['LLM Integration', 'AI Productivity', 'Event-Driven', 'API Design'],
+  'Leadership': ['Stakeholder Alignment', 'Engineering Standards', 'Team Building', 'Pragmatic Execution'],
+};
+
+const education = [
+  { name: 'Cornell University', detail: 'Technology Leadership Certificate', focus: 'Leading technical teams, strategy & execution' },
+  { name: 'UFRGS', detail: 'Applied Mathematics (coursework)', focus: '' },
+  { name: 'Unilasalle', detail: 'Computer Science (coursework)', focus: '' },
+  { name: 'Microsoft (MCPS)', detail: 'Certified Professional', focus: 'Software Development' },
+];
+
+const typeColors: Record<string, string> = {
+  leadership: 'bg-emerald-500',
+  engineering: 'bg-blue-500',
+  consulting: 'bg-violet-500',
+};
+---
+
+<BaseLayout title="CV" description="Thiago Charão - CV and work experience">
+  <section class="py-16 lg:py-20">
+    <div class="max-w-5xl mx-auto px-6">
+      <!-- Header -->
+      <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-16">
+        <div class="flex-1">
+          <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-3">
+            Thiago Charão
+          </h1>
+          <p class="text-xl text-gray-600 dark:text-gray-400 mb-4">
+            Director of Architecture
+          </p>
+          <p class="text-gray-700 dark:text-gray-300 max-w-2xl">
+            Technology & Architecture leader with 20+ years across software engineering, consulting, and architecture leadership. 
+            I build scalable platform and identity foundations and drive measurable delivery efficiency through engineering standards and AI enablement.
+          </p>
+        </div>
+        <a 
+          href="/cv/thiago-charao-cv.pdf" 
+          download
+          class="btn-primary self-start shrink-0"
+        >
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+          Download PDF
+        </a>
+      </div>
+
+      <!-- Key Highlights - Visual Cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-16">
+        <div class="bg-gray-100 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1">20+</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Years in software</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1">~300</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Engineers AI enabled</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1">~20%</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">Productivity uplift</p>
+        </div>
+        <div class="bg-gray-100 dark:bg-gray-800/50 rounded-xl p-5 border border-gray-200 dark:border-gray-700">
+          <p class="text-3xl font-bold text-gray-900 dark:text-white mb-1">50K+</p>
+          <p class="text-sm text-gray-600 dark:text-gray-400">MAU identity scale</p>
+        </div>
+      </div>
+
+      <!-- Two Column Layout -->
+      <div class="grid lg:grid-cols-3 gap-12 lg:gap-16">
+        
+        <!-- Main Content - Timeline -->
+        <div class="lg:col-span-2">
+          <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-8 flex items-center gap-3">
+            <span>Experience</span>
+            <div class="flex gap-2 text-xs">
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-emerald-500"></span> Leadership</span>
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-blue-500"></span> Engineering</span>
+              <span class="flex items-center gap-1"><span class="w-2 h-2 rounded-full bg-violet-500"></span> Consulting</span>
+            </div>
+          </h2>
+          
+          <div class="relative">
+            <!-- Timeline line -->
+            <div class="absolute left-[7px] top-2 bottom-2 w-0.5 bg-gray-200 dark:bg-gray-700"></div>
+            
+            <div class="space-y-8">
+              {timeline.map((job, index) => (
+                <div class="relative pl-8">
+                  {/* Easter egg for early career */}
+                  {job.isEarly && index === timeline.findIndex(j => j.isEarly) && (
+                    <div class="mb-8 p-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-900/20 dark:to-orange-900/20 rounded-xl border border-amber-200 dark:border-amber-800">
+                      <p class="text-sm text-amber-800 dark:text-amber-200 flex items-center gap-2">
+                        <span class="text-lg">🍪</span>
+                        <span>You scrolled all the way down here? Have a cookie! Here's where it all started...</span>
+                      </p>
+                    </div>
+                  )}
+                  <!-- Timeline dot -->
+                  <div class={`absolute left-0 top-1.5 w-4 h-4 rounded-full ${typeColors[job.type]} ring-4 ring-white dark:ring-gray-900`}></div>
+                  
+                  <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-3 mb-2">
+                    <span class="text-xs font-mono text-gray-400 dark:text-gray-500 sm:order-last">{job.year}</span>
+                    <h3 class="font-bold text-gray-900 dark:text-white">{job.title}</h3>
+                  </div>
+                  <p class="text-blue-600 dark:text-accent text-sm font-medium mb-2">{job.company} <span class="text-gray-500 dark:text-gray-500">· {job.location}</span></p>
+                  <ul class="space-y-1">
+                    {job.highlights.map((item) => (
+                      <li class="text-sm text-gray-700 dark:text-gray-400 flex items-start gap-2">
+                        <span class="text-gray-400 dark:text-gray-600 mt-1">·</span>
+                        <span>{item}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Sidebar -->
+        <div class="lg:col-span-1 space-y-10">
+          <!-- Skills -->
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Skills</h2>
+            <div class="space-y-5">
+              {Object.entries(skills).map(([category, items]) => (
+                <div>
+                  <h3 class="text-sm font-medium text-gray-900 dark:text-white mb-2">{category}</h3>
+                  <div class="flex flex-wrap gap-1.5">
+                    {items.map((skill) => (
+                      <span class="text-xs px-2 py-1 bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-400 rounded">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Education -->
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Education</h2>
+            <div class="space-y-4">
+              {education.map((edu) => (
+                <div>
+                  <p class="font-medium text-gray-900 dark:text-white text-sm">{edu.name}</p>
+                  <p class="text-sm text-gray-500 dark:text-gray-400">{edu.detail}</p>
+                  {edu.focus && <p class="text-xs text-gray-400 dark:text-gray-500">{edu.focus}</p>}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <!-- Languages -->
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Languages</h2>
+            <div class="space-y-2 text-sm">
+              <div class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">Portuguese</span>
+                <span class="text-gray-400 dark:text-gray-500">Native</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">English</span>
+                <span class="text-gray-400 dark:text-gray-500">Fluent</span>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600 dark:text-gray-400">Italian</span>
+                <span class="text-gray-400 dark:text-gray-500">Elementary</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Contact -->
+          <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Contact</h2>
+            <div class="space-y-2 text-sm">
+              <p class="text-gray-600 dark:text-gray-400">Porto, Portugal</p>
+              <a href="mailto:charao.thiago@gmail.com" class="text-blue-600 dark:text-accent hover:underline block">charao.thiago@gmail.com</a>
+              <a href="https://linkedin.com/in/charao" target="_blank" class="text-blue-600 dark:text-accent hover:underline block">linkedin.com/in/charao</a>
+              <a href="https://charao.dev" class="text-blue-600 dark:text-accent hover:underline block">charao.dev</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

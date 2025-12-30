@@ -1,0 +1,89 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = [
+  {
+    title: 'AI Productivity Program',
+    org: 'Planet',
+    description: 'Designed and rolled out AI enablement across ~300 engineers. Built governance frameworks, workflows, and measurement systems.',
+    outcome: '~20% productivity uplift',
+    tags: ['AI', 'Governance', 'Enterprise'],
+  },
+  {
+    title: 'Identity Platform',
+    org: 'Planet',
+    description: 'Auth0-based identity platform serving 50K+ monthly active users. Single sign-on, MFA, and identity governance.',
+    outcome: '50K+ MAU',
+    tags: ['Auth0', 'Identity', 'Security'],
+  },
+  {
+    title: 'Internal Developer Platform',
+    org: 'Planet',
+    description: 'Platform foundations on AWS and EKS. Self-service infrastructure, CI/CD pipelines, and developer tooling.',
+    outcome: 'Reduced deploy friction',
+    tags: ['AWS', 'Kubernetes', 'Platform'],
+  },
+  {
+    title: 'DOIS',
+    org: 'Side project',
+    description: 'Engineering blog and experiments with Andreos. Opinions on AI, architecture, and engineering practice.',
+    outcome: 'dois.one',
+    tags: ['Writing', 'AI', 'Engineering'],
+    link: 'https://dois.one',
+  },
+];
+---
+
+<BaseLayout title="Projects" description="Projects and work by Thiago Charão">
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-12">
+        <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+          Projects
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Things I've built, led, or contributed to.
+        </p>
+      </div>
+
+      <div class="grid gap-6">
+        {projects.map((project) => (
+          <div class="card group">
+            <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
+              <div>
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-accent transition-colors">
+                  {project.link ? (
+                    <a href={project.link} target="_blank" rel="noopener" class="flex items-center gap-2">
+                      {project.title}
+                      <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M7 17L17 7M17 7H7M17 7V17"/>
+                      </svg>
+                    </a>
+                  ) : (
+                    project.title
+                  )}
+                </h2>
+                <p class="text-sm text-blue-600 dark:text-accent">{project.org}</p>
+              </div>
+              <span class="text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                {project.outcome}
+              </span>
+            </div>
+            
+            <p class="text-gray-700 dark:text-gray-300 mb-4">
+              {project.description}
+            </p>
+            
+            <div class="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span class="px-2.5 py-1 text-xs font-medium text-gray-600 dark:text-gray-400 bg-gray-200 dark:bg-gray-700/50 rounded">
+                  {tag}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,94 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// No articles hosted here - writing happens on DOIS and LinkedIn
+const articles: { title: string; description: string; date: string; category: string; link?: string }[] = [];
+---
+
+<BaseLayout title="Writing" description="Articles, notes, and opinions by Thiago Charão">
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="mb-12">
+        <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
+          Writing
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400">
+          Articles, notes, and opinions on engineering, AI, and building software.
+        </p>
+      </div>
+
+      <!-- Categories -->
+      <div class="flex flex-wrap gap-3 mb-12">
+        <button class="px-4 py-2 text-sm font-medium text-white bg-accent rounded-lg">All</button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Articles</button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Opinions</button>
+        <button class="px-4 py-2 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">Notes</button>
+      </div>
+
+      <!-- Articles list -->
+      <div class="space-y-1">
+        {articles.map((article) => (
+          <a 
+            href={article.link || '#'}
+            target={article.link?.startsWith('http') ? '_blank' : undefined}
+            rel={article.link?.startsWith('http') ? 'noopener' : undefined}
+            class="block py-5 border-b border-gray-200 dark:border-gray-800 group"
+          >
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-2">
+              <div>
+                <h2 class="text-lg font-medium text-gray-900 dark:text-white group-hover:text-accent transition-colors">
+                  {article.title}
+                </h2>
+                <p class="text-gray-500 dark:text-gray-400 mt-1">
+                  {article.description}
+                </p>
+              </div>
+              <div class="flex items-center gap-3 text-sm text-gray-400 dark:text-gray-500 whitespace-nowrap">
+                <span>{article.category}</span>
+                <span>·</span>
+                <span>{article.date}</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- DOIS callout -->
+      <div class="mt-16 p-8 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+          Most of my recent writing is on <a href="https://dois.one" target="_blank" rel="noopener" class="font-sora font-bold text-blue-600 dark:text-accent hover:underline">DOIS</a>, 
+          a project I run with Andreos where we share experiments, notes, and opinions on engineering and AI.
+        </p>
+        <a 
+          href="https://dois.one" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center gap-2 text-blue-600 dark:text-accent font-medium hover:underline"
+        >
+          Visit DOIS
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- LinkedIn callout -->
+      <div class="mt-6 p-8 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+        <p class="text-lg text-gray-700 dark:text-gray-300 mb-4">
+          I also post regularly on <a href="https://linkedin.com/in/charao" target="_blank" rel="noopener" class="text-blue-600 dark:text-accent hover:underline font-medium">LinkedIn</a> — shorter takes on AI, engineering leadership, and what I'm working on.
+        </p>
+        <a 
+          href="https://linkedin.com/in/charao" 
+          target="_blank" 
+          rel="noopener"
+          class="inline-flex items-center gap-2 text-blue-600 dark:text-accent font-medium hover:underline"
+        >
+          Follow on LinkedIn
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M7 17L17 7M17 7H7M17 7V17"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
