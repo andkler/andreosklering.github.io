@@ -7,10 +7,10 @@ const navItems = [
 ];
 ---
 
-<header class="h-14 bg-bg-header border-b border-gray-700/50">
+<header class="h-14 bg-gray-100 dark:bg-bg-header border-b border-gray-200 dark:border-gray-700/50">
   <div class="max-w-4xl mx-auto px-6 h-full flex items-center justify-between">
-    <a href="/" class="font-mono text-sm text-gray-300 flex items-center hover:text-white transition-colors">
-      <span class="text-gray-500">~/</span>charao.dev<span class="terminal-cursor"></span>
+    <a href="/" class="font-mono text-sm text-gray-700 dark:text-gray-300 flex items-center hover:text-gray-900 dark:hover:text-white transition-colors">
+      <span class="text-gray-400 dark:text-gray-500">~/</span>charao.dev<span class="terminal-cursor"></span>
     </a>
     
     <div class="flex items-center gap-6">
@@ -18,7 +18,7 @@ const navItems = [
         {navItems.map((item) => (
           <a 
             href={item.url} 
-            class="text-sm text-gray-400 hover:text-white transition-colors"
+            class="text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
           >
             {item.name}
           </a>
@@ -27,7 +27,7 @@ const navItems = [
 
       <button 
         id="theme-toggle" 
-        class="p-2 -m-2 text-gray-400 hover:text-white transition-colors"
+        class="p-2 -m-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors border border-gray-300 dark:border-gray-600 rounded-md"
         aria-label="Toggle theme"
       >
         <!-- Sun icon - show when in dark mode to switch to light -->
@@ -44,7 +44,7 @@ const navItems = [
       <!-- Mobile menu button -->
       <button 
         id="mobile-menu-btn"
-        class="md:hidden p-2 -m-2 text-gray-400 hover:text-white"
+        class="md:hidden p-2 -m-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
         aria-label="Menu"
       >
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -55,12 +55,12 @@ const navItems = [
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="hidden md:hidden bg-bg-header border-t border-gray-700">
+  <div id="mobile-menu" class="hidden md:hidden bg-gray-100 dark:bg-bg-header border-t border-gray-200 dark:border-gray-700">
     <nav class="max-w-4xl mx-auto px-6 py-4 flex flex-col gap-3">
       {navItems.map((item) => (
         <a 
           href={item.url} 
-          class="text-sm text-gray-300 hover:text-white transition-colors py-1"
+          class="text-sm text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors py-1"
         >
           {item.name}
         </a>
