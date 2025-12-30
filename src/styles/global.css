@@ -37,7 +37,7 @@
   html:not(.dark) h1,
   html:not(.dark) h2,
   html:not(.dark) h3 {
-    color: #030712;
+    color: #030712 !important;
   }
   
   html:not(.dark) p {
@@ -46,12 +46,36 @@
   
   html:not(.dark) .text-gray-500,
   html:not(.dark) .text-gray-400 {
-    color: #4b5563;
+    color: #4b5563 !important;
   }
   
   html:not(.dark) .text-gray-600,
   html:not(.dark) .text-gray-300 {
-    color: #1f2937;
+    color: #374151 !important;
+  }
+  
+  html:not(.dark) .text-gray-700 {
+    color: #1f2937 !important;
+  }
+  
+  /* Light mode backgrounds - fix dark backgrounds showing */
+  html:not(.dark) .bg-gray-100 {
+    background-color: #f3f4f6 !important;
+  }
+  
+  html:not(.dark) .bg-gray-200 {
+    background-color: #e5e7eb !important;
+  }
+  
+  html:not(.dark) .bg-gray-800,
+  html:not(.dark) .bg-gray-800\/50 {
+    background-color: #f3f4f6 !important;
+  }
+  
+  /* Light mode borders */
+  html:not(.dark) .border-gray-700,
+  html:not(.dark) .border-gray-800 {
+    border-color: #d1d5db !important;
   }
   
   /* Light mode links and interactions */
@@ -74,6 +98,43 @@
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+  }
+  
+  /* Stat cards - theme aware */
+  .stat-card {
+    background-color: #f3f4f6;
+    border-color: #e5e7eb;
+    color: #111827;
+  }
+  
+  html.dark .stat-card {
+    background-color: rgba(31, 41, 55, 0.5);
+    border-color: #374151;
+    color: #f3f4f6;
+  }
+  
+  /* Skill tags - theme aware */
+  .skill-tag {
+    background-color: #e5e7eb;
+    color: #374151;
+  }
+  
+  html.dark .skill-tag {
+    background-color: #1f2937;
+    color: #9ca3af;
+  }
+  
+  /* Callout box - theme aware */
+  .callout-box {
+    background-color: #f3f4f6;
+    border-color: #d1d5db;
+    color: #374151;
+  }
+  
+  html.dark .callout-box {
+    background-color: rgba(31, 41, 55, 0.5);
+    border-color: #374151;
+    color: #9ca3af;
   }
   
   .btn-primary {
