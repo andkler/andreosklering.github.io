@@ -48,15 +48,18 @@
     }
   ],
   "feedback": {
-    "total_entries": 77,
+    "total_entries": 78,
     "unique_people": 62,
-    "timeframe": "2024–2025",
+    "timeframe": "over the years",
     "top_themes": [
-      { "name": "Execution", "percent": "~65%" },
-      { "name": "Technical depth", "percent": "~58%" },
-      { "name": "Enablement", "percent": "~58%" }
+      { "name": "Collaboration", "percent": "78%" },
+      { "name": "Technical depth", "percent": "64%" },
+      { "name": "Innovation", "percent": "62%" },
+      { "name": "Helpful & available", "percent": "49%" },
+      { "name": "Strategic vision", "percent": "44%" },
+      { "name": "Execution", "percent": "44%" }
     ],
-    "note": "% of feedback mentioning theme"
+    "note": "% of feedback mentioning theme (keyword-based analysis)"
   },
   "all": [
     {
@@ -121,10 +124,10 @@
     },
     {
       "id": "feedback_entries_total",
-      "value": "77",
+      "value": "78",
       "unit": "entries",
       "label": "Total feedback entries",
-      "timeframe": "2024–2025",
+      "timeframe": "over the years",
       "proof_note": "Feedback tool export",
       "sensitivity": "public-safe",
       "method": "export",
@@ -141,30 +144,10 @@
       "category": "leadership"
     },
     {
-      "id": "feedback_entries_2024",
-      "value": "29",
-      "unit": "entries",
-      "label": "Feedback entries in 2024",
-      "proof_note": "Feedback tool export",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "leadership"
-    },
-    {
-      "id": "feedback_entries_2025",
-      "value": "48",
-      "unit": "entries",
-      "label": "Feedback entries in 2025",
-      "proof_note": "Feedback tool export",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "leadership"
-    },
-    {
-      "id": "feedback_theme_execution",
-      "value": "~65%",
+      "id": "feedback_theme_collaboration",
+      "value": "78%",
       "unit": "",
-      "label": "Execution theme in feedback",
+      "label": "Collaboration theme",
       "proof_note": "Keyword-based scan",
       "sensitivity": "public-safe",
       "method": "keyword-scan",
@@ -172,7 +155,7 @@
     },
     {
       "id": "feedback_theme_technical_depth",
-      "value": "~58%",
+      "value": "64%",
       "unit": "",
       "label": "Technical depth theme",
       "proof_note": "Keyword-based scan",
@@ -181,30 +164,50 @@
       "category": "feedback-themes"
     },
     {
-      "id": "feedback_theme_enablement",
-      "value": "~58%",
+      "id": "feedback_theme_innovation",
+      "value": "62%",
       "unit": "",
-      "label": "Enablement theme",
+      "label": "Innovation theme",
       "proof_note": "Keyword-based scan",
       "sensitivity": "public-safe",
       "method": "keyword-scan",
       "category": "feedback-themes"
     },
     {
-      "id": "feedback_theme_stakeholder_alignment",
-      "value": "~57%",
+      "id": "feedback_theme_helpful",
+      "value": "49%",
       "unit": "",
-      "label": "Stakeholder alignment theme",
+      "label": "Helpful & available theme",
       "proof_note": "Keyword-based scan",
       "sensitivity": "public-safe",
       "method": "keyword-scan",
       "category": "feedback-themes"
     },
     {
-      "id": "feedback_theme_preparedness",
-      "value": "~53%",
+      "id": "feedback_theme_strategic_vision",
+      "value": "44%",
       "unit": "",
-      "label": "Preparedness theme",
+      "label": "Strategic vision theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_execution",
+      "value": "44%",
+      "unit": "",
+      "label": "Execution theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_positive_energy",
+      "value": "41%",
+      "unit": "",
+      "label": "Positive energy theme",
       "proof_note": "Keyword-based scan",
       "sensitivity": "public-safe",
       "method": "keyword-scan",
@@ -212,7 +215,7 @@
     },
     {
       "id": "feedback_theme_leadership",
-      "value": "~42%",
+      "value": "40%",
       "unit": "",
       "label": "Leadership theme",
       "proof_note": "Keyword-based scan",
