@@ -8,13 +8,13 @@ const categories = {
     label: 'Impact & Scale',
     color: 'blue',
     icon: '📊',
-    metrics: metrics.all.filter(m => ['years_experience', 'ai_enabled_engineers', 'identity_mau', 'architecture_reviews', 'high_stakes_programs'].includes(m.id))
+    metrics: metrics.all.filter(m => ['years_experience', 'identity_mau', 'architecture_reviews', 'high_stakes_programs'].includes(m.id))
   },
   ai: {
     label: 'AI Enablement',
     color: 'emerald',
     icon: '🤖',
-    metrics: metrics.all.filter(m => ['ai_weekly_adoption', 'ai_champions'].includes(m.id))
+    metrics: metrics.all.filter(m => ['ai_enabled_engineers', 'ai_weekly_adoption', 'ai_champions'].includes(m.id))
   },
   feedback: {
     label: 'Stakeholder Feedback',
