@@ -184,15 +184,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <!-- Sticky Receipts CTA - Fixed at bottom of viewport -->
   <div 
     id="receipts-sticky"
-    class="fixed bottom-6 left-0 right-0 z-40 pointer-events-none transition-opacity duration-300"
+    class="fixed bottom-8 left-0 right-0 z-40 pointer-events-none opacity-0 transition-opacity duration-300"
   >
     <div class="max-w-4xl mx-auto px-6 text-center">
       <button 
         id="receipts-trigger"
-        class="pointer-events-auto inline-flex flex-col items-center gap-1.5 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors cursor-pointer group bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
+        class="pointer-events-auto inline-flex flex-col items-center gap-1.5 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors cursor-pointer group"
       >
         <span class="text-sm font-semibold tracking-wide">The Receipts</span>
-        <svg id="receipts-arrow" class="w-4 h-4 animate-bounce group-hover:animate-none transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg id="receipts-arrow" class="w-4 h-4 animate-bounce group-hover:animate-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
         </svg>
       </button>
@@ -227,7 +227,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   <script>
     // Elements
     const stickyContainer = document.getElementById('receipts-sticky');
-    const receiptsArrow = document.getElementById('receipts-arrow');
     const receiptsTitle = document.getElementById('receipts-title');
     const receiptsCards = document.getElementById('receipts-cards');
     const receiptsSection = document.getElementById('receipts');
@@ -241,69 +240,53 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     });
 
-    // Check if sticky button would overlap with DOIS callout
-    function checkOverlap() {
-      if (!stickyContainer || !doisCallout) return false;
-      
-      const calloutRect = doisCallout.getBoundingClientRect();
-      const stickyRect = stickyContainer.getBoundingClientRect();
-      
-      // Check if the bottom of callout is below the top of sticky button
-      // Add some margin (40px) to prevent overlap
-      return calloutRect.bottom > (stickyRect.top - 40);
+    // Check if receipts section title is visible in viewport
+    function isReceiptsTitleVisible() {
+      if (!receiptsSection) return false;
+      const rect = receiptsSection.getBoundingClientRect();
+      return rect.top < window.innerHeight;
+    }
+
+    // Check if DOIS callout has been scrolled past (its bottom is above button area)
+    function hasScrolledPastCallout() {
+      if (!doisCallout) return true;
+      const rect = doisCallout.getBoundingClientRect();
+      // Button is at bottom-8 (32px), needs ~60px clearance
+      return rect.bottom < window.innerHeight - 90;
     }
 
     // Update visibility based on scroll position
     function updateStickyVisibility() {
-      if (!stickyContainer) return;
+      if (!stickyContainer || !receiptsTitle) return;
       
-      const shouldHide = checkOverlap();
-      
-      if (shouldHide) {
-        stickyContainer.style.opacity = '0';
-        stickyContainer.style.pointerEvents = 'none';
+      const titleVisible = isReceiptsTitleVisible();
+      const pastCallout = hasScrolledPastCallout();
+
+      // Show sticky button when:
+      // 1. Receipts title is NOT visible
+      // 2. User has scrolled past the DOIS callout (no overlap)
+      if (!titleVisible && pastCallout) {
+        stickyContainer.classList.remove('opacity-0', 'pointer-events-none');
       } else {
-        // Only show if cards aren't visible (handled by observer)
-        // This just prevents showing when overlapping
+        stickyContainer.classList.add('opacity-0', 'pointer-events-none');
+      }
+
+      // Update title styling - bigger when cards are in view
+      const cardsRect = receiptsCards?.getBoundingClientRect();
+      const cardsInView = cardsRect && cardsRect.top < window.innerHeight - 100;
+      
+      if (cardsInView) {
+        receiptsTitle.classList.remove('text-lg', 'text-gray-500', 'dark:text-gray-400');
+        receiptsTitle.classList.add('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
+      } else {
+        receiptsTitle.classList.add('text-lg', 'text-gray-500', 'dark:text-gray-400');
+        receiptsTitle.classList.remove('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
       }
     }
 
-    // Listen to scroll for overlap check
+    // Listen to scroll
     window.addEventListener('scroll', updateStickyVisibility, { passive: true });
     window.addEventListener('resize', updateStickyVisibility, { passive: true });
-
-    // Intersection Observer for cards visibility
-    const observerOptions = {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3 // 30% of cards visible
-    };
-
-    const cardsObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          // Cards are visible - hide sticky button, grow title
-          stickyContainer?.classList.add('opacity-0');
-          stickyContainer?.classList.add('pointer-events-none');
-          receiptsTitle?.classList.remove('text-lg');
-          receiptsTitle?.classList.add('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
-          receiptsTitle?.classList.remove('text-gray-500', 'dark:text-gray-400');
-        } else {
-          // Cards not visible - show sticky button only if not overlapping
-          if (!checkOverlap()) {
-            stickyContainer?.classList.remove('opacity-0');
-            stickyContainer?.classList.remove('pointer-events-none');
-          }
-          receiptsTitle?.classList.add('text-lg');
-          receiptsTitle?.classList.remove('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
-          receiptsTitle?.classList.add('text-gray-500', 'dark:text-gray-400');
-        }
-      });
-    }, observerOptions);
-
-    if (receiptsCards) {
-      cardsObserver.observe(receiptsCards);
-    }
 
     // Initial check
     updateStickyVisibility();
