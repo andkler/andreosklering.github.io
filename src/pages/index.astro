@@ -240,42 +240,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       }
     });
 
-    // Check if receipts section title is visible in viewport
-    function isReceiptsTitleVisible() {
-      if (!receiptsSection) return false;
-      const rect = receiptsSection.getBoundingClientRect();
-      return rect.top < window.innerHeight;
+    // Check if cards are visible
+    function areCardsVisible() {
+      if (!receiptsCards) return false;
+      const rect = receiptsCards.getBoundingClientRect();
+      // Cards are visible if top is within viewport
+      return rect.top < window.innerHeight - 50;
     }
 
-    // Check if DOIS callout has been scrolled past (its bottom is above button area)
-    function hasScrolledPastCallout() {
-      if (!doisCallout) return true;
+    // Check if button would overlap DOIS callout
+    function wouldOverlapCallout() {
+      if (!doisCallout) return false;
       const rect = doisCallout.getBoundingClientRect();
-      // Button is at bottom-8 (32px), needs ~60px clearance
-      return rect.bottom < window.innerHeight - 90;
+      // Button is at bottom-8 (32px from bottom), needs clearance
+      // If callout bottom is below where button would sit, there's overlap
+      const buttonTop = window.innerHeight - 80; // ~80px from bottom for the button
+      return rect.bottom > buttonTop;
     }
 
     // Update visibility based on scroll position
     function updateStickyVisibility() {
       if (!stickyContainer || !receiptsTitle) return;
       
-      const titleVisible = isReceiptsTitleVisible();
-      const pastCallout = hasScrolledPastCallout();
+      const cardsVisible = areCardsVisible();
+      const overlapsCallout = wouldOverlapCallout();
 
       // Show sticky button when:
-      // 1. Receipts title is NOT visible
-      // 2. User has scrolled past the DOIS callout (no overlap)
-      if (!titleVisible && pastCallout) {
-        stickyContainer.classList.remove('opacity-0', 'pointer-events-none');
+      // 1. Cards are NOT yet visible (there's something to scroll to)
+      // 2. Button won't overlap the DOIS callout
+      if (!cardsVisible && !overlapsCallout) {
+        stickyContainer.classList.remove('opacity-0');
+        stickyContainer.classList.add('opacity-100');
       } else {
-        stickyContainer.classList.add('opacity-0', 'pointer-events-none');
+        stickyContainer.classList.remove('opacity-100');
+        stickyContainer.classList.add('opacity-0');
       }
 
       // Update title styling - bigger when cards are in view
-      const cardsRect = receiptsCards?.getBoundingClientRect();
-      const cardsInView = cardsRect && cardsRect.top < window.innerHeight - 100;
-      
-      if (cardsInView) {
+      if (cardsVisible) {
         receiptsTitle.classList.remove('text-lg', 'text-gray-500', 'dark:text-gray-400');
         receiptsTitle.classList.add('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
       } else {
@@ -288,7 +290,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     window.addEventListener('scroll', updateStickyVisibility, { passive: true });
     window.addEventListener('resize', updateStickyVisibility, { passive: true });
 
-    // Initial check
-    updateStickyVisibility();
+    // Initial check after a tiny delay to ensure layout is complete
+    requestAnimationFrame(() => {
+      updateStickyVisibility();
+    });
   </script>
 </BaseLayout>
