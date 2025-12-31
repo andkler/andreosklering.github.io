@@ -3,8 +3,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout title="Home" description="Thiago Charão - Director of Architecture. Platform, Identity, and AI.">
+  <!-- Main container - relative for absolute positioning of receipts on large screens -->
+  <div class="lg:min-h-[calc(100vh-8rem)] lg:relative">
+  
   <!-- Hero Section -->
-  <section class="py-8 md:py-12 lg:py-16">
+  <section class="py-6 md:py-8 lg:py-10">
     <div class="max-w-4xl mx-auto px-6">
       
       <!-- Mobile: Photo + Name header -->
@@ -89,7 +92,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- DOIS callout -->
-          <div class="callout-box p-4 rounded-lg border mb-8 md:mb-12">
+          <div class="callout-box p-4 rounded-lg border mb-6 lg:mb-16">
             <p class="text-sm md:text-base">
               I co-run <a href="https://dois.one" target="_blank" rel="noopener" class="font-sora font-bold text-blue-600 dark:text-accent hover:underline">DOIS</a> where 
               we publish experiments, notes, and opinions on engineering and AI practice.
@@ -118,16 +121,16 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <div class="hidden lg:block lg:col-span-1">
           <div class="lg:sticky lg:top-8">
             <!-- Photo - colored in light, grayscale in dark -->
-            <div class="mb-8">
+            <div class="mb-6">
               <img 
                 src="/images/thiago.jpg" 
                 alt="Thiago Charão" 
-                class="w-32 h-32 rounded-full object-cover grayscale-0 dark:grayscale dark:hover:grayscale-0 transition-all duration-300"
+                class="w-28 h-28 rounded-full object-cover grayscale-0 dark:grayscale dark:hover:grayscale-0 transition-all duration-300"
               />
             </div>
 
             <!-- Quick facts -->
-            <div class="space-y-4 text-sm text-gray-600 dark:text-gray-400">
+            <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <div>
                 <p class="font-medium text-gray-900 dark:text-white">Location</p>
                 <p>Porto, Portugal</p>
@@ -143,15 +146,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </div>
 
             <!-- Personal -->
-            <div class="mt-8 pt-8 border-t border-gray-300 dark:border-gray-700">
-              <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-6">
+            <div class="mt-6 pt-6 border-t border-gray-300 dark:border-gray-700">
+              <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-4">
                 Coffee person. Dog person.<br/>
                 Carries strong opinions but updates when evidence wins.
               </p>
 
               <!-- What I care about -->
-              <p class="font-medium text-gray-900 dark:text-white text-sm mb-3">What I care about</p>
-              <ul class="space-y-2 text-sm text-gray-600 dark:text-gray-400">
+              <p class="font-medium text-gray-900 dark:text-white text-sm mb-2">What I care about</p>
+              <ul class="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
                 <li class="flex items-start gap-2">
                   <span class="text-blue-600 dark:text-accent">→</span>
                   <span>Platforms that reduce friction</span>
@@ -176,8 +179,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- The Receipts CTA - Inline, scrolls into view -->
-  <section class="py-6 md:py-10">
+  <!-- The Receipts CTA - Positioned at bottom on large screens -->
+  <section class="py-4 md:py-6 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:pb-8">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <button 
         id="receipts-trigger"
@@ -190,21 +193,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </button>
     </div>
   </section>
+  
+  </div> <!-- End of container -->
 
   <!-- Credentials Section -->
   <section id="receipts" class="py-12 md:py-16 border-t border-gray-300 dark:border-gray-800 scroll-mt-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-700/60 border border-gray-200 dark:border-gray-600">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
           <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">20+</p>
           <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">years building software</p>
         </div>
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-700/60 border border-gray-200 dark:border-gray-600">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
           <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">~300</p>
           <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">engineers AI enabled</p>
           <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">~20% productivity uplift</p>
         </div>
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-700/60 border border-gray-200 dark:border-gray-600">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
           <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">50K+</p>
           <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">MAU identity scale</p>
         </div>
