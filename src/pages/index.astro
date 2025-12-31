@@ -92,7 +92,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           </div>
 
           <!-- DOIS callout -->
-          <div class="callout-box p-4 rounded-lg border mb-6 lg:mb-16">
+          <div id="dois-callout" class="callout-box p-4 rounded-lg border mb-6 lg:mb-16">
             <p class="text-sm md:text-base">
               I co-run <a href="https://dois.one" target="_blank" rel="noopener" class="font-sora font-bold text-blue-600 dark:text-accent hover:underline">DOIS</a> where 
               we publish experiments, notes, and opinions on engineering and AI practice.
@@ -169,7 +169,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
                 </li>
                 <li class="flex items-start gap-2">
                   <span class="text-blue-600 dark:text-accent">→</span>
-                  <span>Architecture grounded in trade-offs</span>
+                  <span>Pragmatic architecture</span>
                 </li>
               </ul>
             </div>
@@ -232,6 +232,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const receiptsCards = document.getElementById('receipts-cards');
     const receiptsSection = document.getElementById('receipts');
     const receiptsTrigger = document.getElementById('receipts-trigger');
+    const doisCallout = document.getElementById('dois-callout');
 
     // Smooth scroll to receipts on click
     receiptsTrigger?.addEventListener('click', () => {
@@ -239,6 +240,37 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         receiptsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+
+    // Check if sticky button would overlap with DOIS callout
+    function checkOverlap() {
+      if (!stickyContainer || !doisCallout) return false;
+      
+      const calloutRect = doisCallout.getBoundingClientRect();
+      const stickyRect = stickyContainer.getBoundingClientRect();
+      
+      // Check if the bottom of callout is below the top of sticky button
+      // Add some margin (40px) to prevent overlap
+      return calloutRect.bottom > (stickyRect.top - 40);
+    }
+
+    // Update visibility based on scroll position
+    function updateStickyVisibility() {
+      if (!stickyContainer) return;
+      
+      const shouldHide = checkOverlap();
+      
+      if (shouldHide) {
+        stickyContainer.style.opacity = '0';
+        stickyContainer.style.pointerEvents = 'none';
+      } else {
+        // Only show if cards aren't visible (handled by observer)
+        // This just prevents showing when overlapping
+      }
+    }
+
+    // Listen to scroll for overlap check
+    window.addEventListener('scroll', updateStickyVisibility, { passive: true });
+    window.addEventListener('resize', updateStickyVisibility, { passive: true });
 
     // Intersection Observer for cards visibility
     const observerOptions = {
@@ -257,9 +289,11 @@ import BaseLayout from '../layouts/BaseLayout.astro';
           receiptsTitle?.classList.add('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
           receiptsTitle?.classList.remove('text-gray-500', 'dark:text-gray-400');
         } else {
-          // Cards not visible - show sticky button, shrink title
-          stickyContainer?.classList.remove('opacity-0');
-          stickyContainer?.classList.remove('pointer-events-none');
+          // Cards not visible - show sticky button only if not overlapping
+          if (!checkOverlap()) {
+            stickyContainer?.classList.remove('opacity-0');
+            stickyContainer?.classList.remove('pointer-events-none');
+          }
           receiptsTitle?.classList.add('text-lg');
           receiptsTitle?.classList.remove('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
           receiptsTitle?.classList.add('text-gray-500', 'dark:text-gray-400');
@@ -270,5 +304,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     if (receiptsCards) {
       cardsObserver.observe(receiptsCards);
     }
+
+    // Initial check
+    updateStickyVisibility();
   </script>
 </BaseLayout>
