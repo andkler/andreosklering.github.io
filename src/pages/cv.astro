@@ -185,16 +185,25 @@ const typeColors: Record<string, string> = {
             I build and lead teams where shipping anything is a battle. 78% of stakeholders who gave me feedback mention collaboration as a strength. I've enabled ~300 engineers with AI tools, chair 50+ architecture reviews per year, and consistently turn complex cross-functional programs into delivered outcomes.
           </p>
         </div>
-        <a 
-          href="/cv/thiago-charao-cv.pdf" 
-          download
-          class="btn-primary self-start shrink-0"
-        >
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
-          </svg>
-          Download PDF
-        </a>
+        <div class="flex flex-col gap-2 self-start shrink-0">
+          <a 
+            href="/cv/thiago-charao-cv.pdf" 
+            download
+            class="btn-primary"
+          >
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+            </svg>
+            Download PDF
+          </a>
+          <a 
+            href="/cv/thiago-charao-cv-ats.txt" 
+            download
+            class="text-xs text-center text-gray-500 dark:text-gray-400 hover:text-emerald-600 dark:hover:text-emerald-400 transition-colors"
+          >
+            ATS-friendly text version
+          </a>
+        </div>
       </div>
 
       <!-- Key Highlights - Compact Visual Cards -->
@@ -209,7 +218,11 @@ const typeColors: Record<string, string> = {
           </a>
         </div>
       </div>
-      <div class="grid grid-cols-3 gap-2 mb-6">
+      <div class="grid grid-cols-4 gap-2 mb-6">
+        <div class="stat-card rounded-lg p-3 border bg-gray-50 dark:bg-gray-800/50 border-gray-200 dark:border-gray-700">
+          <p class="text-2xl font-bold mb-0.5 text-gray-700 dark:text-gray-300">20+</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Years in software</p>
+        </div>
         <div class="stat-card rounded-lg p-3 border bg-emerald-50 dark:bg-emerald-900/20 border-emerald-200 dark:border-emerald-800">
           <p class="text-2xl font-bold mb-0.5 text-emerald-700 dark:text-emerald-400">78%</p>
           <p class="text-xs text-emerald-600 dark:text-emerald-500">Collaboration theme</p>
