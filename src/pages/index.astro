@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import metrics from '../data/metrics.json';
 
 const featured = metrics.featured;
+const feedback = metrics.feedback;
 ---
 
 <BaseLayout title="Home" description="Thiago Charão - Director of Architecture. Platform, Identity, and AI.">
@@ -220,6 +221,34 @@ const featured = metrics.featured;
             {metric.timeframe && <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">{metric.timeframe}</p>}
           </div>
         ))}
+      </div>
+      
+      <!-- Peer Feedback Card - Special treatment -->
+      <div class="mt-6 p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 text-left max-w-xl mx-auto">
+        <div class="flex items-baseline justify-between mb-4">
+          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Peer Feedback</h3>
+          <span class="text-xs text-gray-500 dark:text-gray-500">{feedback.timeframe}</span>
+        </div>
+        <div class="flex gap-8 mb-4">
+          <div>
+            <p class="text-2xl font-bold text-gray-900 dark:text-white">{feedback.total_entries}</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">entries</p>
+          </div>
+          <div>
+            <p class="text-2xl font-bold text-gray-900 dark:text-white">{feedback.unique_people}</p>
+            <p class="text-xs text-gray-600 dark:text-gray-400">unique people</p>
+          </div>
+        </div>
+        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
+          <p class="text-xs text-gray-500 dark:text-gray-500 mb-2">Top themes mentioned:</p>
+          <div class="flex flex-wrap gap-2">
+            {feedback.top_themes.map((theme) => (
+              <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-xs text-gray-700 dark:text-gray-300">
+                {theme.name} <span class="text-gray-500 dark:text-gray-400">{theme.percent}</span>
+              </span>
+            ))}
+          </div>
+        </div>
       </div>
       
       <!-- Methodology link -->

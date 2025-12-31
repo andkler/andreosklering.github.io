@@ -1,6 +1,5 @@
 {
   "meta": {
-    "last_updated": "2025-12-31",
     "methodology": "Dashboard exports, internal tools, keyword-based feedback analysis",
     "note": "All metrics are public-safe. Sensitive details (programs, customers, contracts) intentionally omitted."
   },
@@ -16,60 +15,49 @@
       "id": "ai_enabled_engineers",
       "value": "~300",
       "unit": "engineers",
-      "label": "AI-enabled",
+      "label": "AI-enabled, ~20% productivity uplift",
       "category": "ai"
     },
     {
       "id": "ai_weekly_adoption",
       "value": "40%",
       "unit": "",
-      "label": "Weekly AI adoption",
+      "label": "Weekly AI adoption rate",
       "category": "ai"
     },
     {
       "id": "identity_mau",
       "value": "60K+",
       "unit": "MAU",
-      "label": "Identity platform scale",
+      "label": "Identity platform consolidation",
       "category": "platform"
-    },
-    {
-      "id": "feedback_entries",
-      "value": "77",
-      "unit": "entries",
-      "label": "Peer feedback received",
-      "timeframe": "2024–2025",
-      "category": "leadership"
-    },
-    {
-      "id": "feedback_unique_people",
-      "value": "62",
-      "unit": "people",
-      "label": "Unique stakeholders",
-      "category": "leadership"
     },
     {
       "id": "architecture_reviews",
       "value": "50+",
-      "unit": "/year",
+      "unit": "per year",
       "label": "Architecture reviews chaired",
       "category": "architecture"
     },
     {
       "id": "high_stakes_programs",
       "value": "~5",
-      "unit": "/year",
-      "label": "High-stakes programs",
+      "unit": "per year",
+      "label": "High-stakes programs supported",
       "category": "leadership"
-    },
-    {
-      "id": "ai_champions_functions",
-      "value": "6",
-      "unit": "functions",
-      "label": "Cross-functional AI impact",
-      "category": "ai"
     }
   ],
+  "feedback": {
+    "total_entries": 77,
+    "unique_people": 62,
+    "timeframe": "2024–2025",
+    "top_themes": [
+      { "name": "Execution", "percent": "~65%" },
+      { "name": "Technical depth", "percent": "~58%" },
+      { "name": "Enablement", "percent": "~58%" }
+    ],
+    "note": "% of feedback mentioning theme"
+  },
   "all": [
     {
       "id": "years_experience",
@@ -235,7 +223,7 @@
     {
       "id": "architecture_reviews",
       "value": "50+",
-      "unit": "/year",
+      "unit": "per year",
       "label": "Architecture reviews/designs chaired with domain teams",
       "proof_note": "Internal review tracker",
       "sensitivity": "public-safe",
@@ -245,7 +233,7 @@
     {
       "id": "high_stakes_programs",
       "value": "~5",
-      "unit": "/year",
+      "unit": "per year",
       "label": "High-stakes programs supported",
       "proof_note": "Cross-functional program involvement",
       "sensitivity": "public-safe",
