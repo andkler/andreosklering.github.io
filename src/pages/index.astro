@@ -1,5 +1,8 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import metrics from '../data/metrics.json';
+
+const featured = metrics.featured;
 ---
 
 <BaseLayout title="Home" description="Thiago Charão - Director of Architecture. Platform, Identity, and AI.">
@@ -206,21 +209,23 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2 id="receipts-title" class="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-8 transition-all duration-300">
         The Receipts
       </h2>
-      <div id="receipts-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-600">
-          <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">20+</p>
-          <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">years building software</p>
-        </div>
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-600">
-          <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">~300</p>
-          <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">engineers AI enabled</p>
-          <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">~20% productivity uplift</p>
-        </div>
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-600">
-          <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">50K+</p>
-          <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">MAU identity scale</p>
-        </div>
+      <div id="receipts-cards" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
+        {featured.map((metric) => (
+          <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700">
+            <p class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
+              {metric.value}
+              {metric.unit && <span class="text-lg md:text-xl font-normal text-gray-500 dark:text-gray-400 ml-1">{metric.unit}</span>}
+            </p>
+            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-300">{metric.label}</p>
+            {metric.timeframe && <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">{metric.timeframe}</p>}
+          </div>
+        ))}
       </div>
+      
+      <!-- Methodology link -->
+      <p class="mt-6 text-xs text-gray-500 dark:text-gray-500">
+        <a href="/proof-method" class="hover:text-blue-600 dark:hover:text-accent underline underline-offset-2">How these numbers are measured →</a>
+      </p>
     </div>
   </section>
 

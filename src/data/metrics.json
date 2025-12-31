@@ -1,0 +1,227 @@
+{
+  "meta": {
+    "last_updated": "2025-12-31",
+    "methodology": "Dashboard exports, internal tools, keyword-based feedback analysis",
+    "note": "All metrics are public-safe. Sensitive details (programs, customers, contracts) intentionally omitted."
+  },
+  "featured": [
+    {
+      "id": "years_experience",
+      "value": "20+",
+      "unit": "years",
+      "label": "Building software",
+      "category": "experience"
+    },
+    {
+      "id": "ai_enabled_engineers",
+      "value": "~300",
+      "unit": "engineers",
+      "label": "AI-enabled",
+      "category": "ai"
+    },
+    {
+      "id": "ai_weekly_adoption",
+      "value": "40%",
+      "unit": "",
+      "label": "Weekly AI adoption",
+      "category": "ai"
+    },
+    {
+      "id": "identity_mau",
+      "value": "60K+",
+      "unit": "MAU",
+      "label": "Identity platform scale",
+      "category": "platform"
+    },
+    {
+      "id": "feedback_entries",
+      "value": "77",
+      "unit": "entries",
+      "label": "Peer feedback received",
+      "timeframe": "2024–2025",
+      "category": "leadership"
+    },
+    {
+      "id": "feedback_unique_people",
+      "value": "62",
+      "unit": "people",
+      "label": "Unique stakeholders",
+      "category": "leadership"
+    }
+  ],
+  "all": [
+    {
+      "id": "years_experience",
+      "value": "20+",
+      "unit": "years",
+      "label": "Years building software systems",
+      "proof_note": "Career span from 2005",
+      "sensitivity": "public-safe",
+      "method": "resume",
+      "category": "experience"
+    },
+    {
+      "id": "ai_enabled_engineers",
+      "value": "~300",
+      "unit": "engineers",
+      "label": "Engineers AI-enabled",
+      "proof_note": "Org-wide rollout dashboard",
+      "sensitivity": "public-safe",
+      "method": "dashboard",
+      "category": "ai"
+    },
+    {
+      "id": "ai_weekly_adoption",
+      "value": "40%",
+      "unit": "",
+      "label": "Weekly AI tool adoption rate",
+      "proof_note": "Copilot admin dashboard",
+      "sensitivity": "public-safe",
+      "method": "dashboard",
+      "category": "ai"
+    },
+    {
+      "id": "ai_champions_count",
+      "value": "10+",
+      "unit": "champions",
+      "label": "AI Champions recruited",
+      "proof_note": "Internal champion network",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "ai"
+    },
+    {
+      "id": "ai_champions_functions",
+      "value": "6",
+      "unit": "functions",
+      "label": "Business functions with champions",
+      "proof_note": "Tech, HR, Finance, Ops, Legal, Commercial",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "ai"
+    },
+    {
+      "id": "identity_mau",
+      "value": "60K+",
+      "unit": "MAU",
+      "label": "Identity platform monthly active users",
+      "proof_note": "Auth0 dashboard",
+      "sensitivity": "public-safe",
+      "method": "dashboard",
+      "category": "platform"
+    },
+    {
+      "id": "feedback_entries_total",
+      "value": "77",
+      "unit": "entries",
+      "label": "Total feedback entries",
+      "timeframe": "2024–2025",
+      "proof_note": "Feedback tool export",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "leadership"
+    },
+    {
+      "id": "feedback_unique_people",
+      "value": "62",
+      "unit": "people",
+      "label": "Unique people giving feedback",
+      "proof_note": "Feedback tool export",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "leadership"
+    },
+    {
+      "id": "feedback_entries_2024",
+      "value": "29",
+      "unit": "entries",
+      "label": "Feedback entries in 2024",
+      "proof_note": "Feedback tool export",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "leadership"
+    },
+    {
+      "id": "feedback_entries_2025",
+      "value": "48",
+      "unit": "entries",
+      "label": "Feedback entries in 2025",
+      "proof_note": "Feedback tool export",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "leadership"
+    },
+    {
+      "id": "feedback_theme_execution",
+      "value": "~65%",
+      "unit": "",
+      "label": "Execution theme in feedback",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_technical_depth",
+      "value": "~58%",
+      "unit": "",
+      "label": "Technical depth theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_enablement",
+      "value": "~58%",
+      "unit": "",
+      "label": "Enablement theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_stakeholder_alignment",
+      "value": "~57%",
+      "unit": "",
+      "label": "Stakeholder alignment theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_preparedness",
+      "value": "~53%",
+      "unit": "",
+      "label": "Preparedness theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    },
+    {
+      "id": "feedback_theme_leadership",
+      "value": "~42%",
+      "unit": "",
+      "label": "Leadership theme",
+      "proof_note": "Keyword-based scan",
+      "sensitivity": "public-safe",
+      "method": "keyword-scan",
+      "category": "feedback-themes"
+    }
+  ],
+  "todo": [
+    {
+      "id": "architecture_reviews_chaired",
+      "label": "Architecture reviews chaired per quarter",
+      "status": "pending"
+    },
+    {
+      "id": "high_stakes_programs_supported",
+      "label": "High-stakes programs supported",
+      "status": "pending"
+    }
+  ]
+}
