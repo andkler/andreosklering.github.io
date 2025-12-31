@@ -96,16 +96,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
             </p>
           </div>
 
-          <!-- The Receipts inline on mobile -->
-          <div class="md:hidden mb-8">
-            <a href="#receipts" class="inline-flex items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors">
-              <span class="text-sm font-medium">The Receipts</span>
-              <svg class="w-4 h-4 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-              </svg>
-            </a>
-          </div>
-
           <!-- Mobile: Compact info card -->
           <div class="md:hidden bg-gray-50 dark:bg-gray-800/50 rounded-xl p-4 mb-8">
             <div class="grid grid-cols-2 gap-4 text-sm mb-4">
@@ -122,14 +112,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               Coffee person. Dog person. Strong opinions, loosely held.
             </p>
           </div>
-
-          <!-- Desktop: Bouncing Arrow to Receipts -->
-          <a href="#receipts" class="hidden md:inline-flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors group">
-            <span class="text-sm font-medium">The Receipts</span>
-            <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
-          </a>
         </div>
 
         <!-- Desktop Sidebar -->
@@ -194,30 +176,49 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- Credentials Section -->
-  <section id="receipts" class="py-12 md:py-16 border-t border-gray-300 dark:border-gray-800 scroll-mt-8">
+  <!-- The Receipts CTA - Centered, works as scroll trigger -->
+  <section class="py-8 md:py-12">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <h2 class="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-8 md:mb-12">The Receipts</h2>
-      
-      <div class="grid grid-cols-3 gap-4 md:gap-8">
-        <div>
-          <p class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2">20+</p>
-          <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">years building software</p>
-        </div>
-        <div>
-          <p class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2">~300</p>
-          <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">engineers AI enabled</p>
-        </div>
-        <div>
-          <p class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1 md:mb-2">50K+</p>
-          <p class="text-xs md:text-sm text-gray-600 dark:text-gray-400">MAU identity scale</p>
-        </div>
-      </div>
-      
-      <!-- Extra context on mobile -->
-      <p class="mt-6 text-xs text-gray-500 dark:text-gray-500 md:hidden">
-        ~20% productivity uplift through AI enablement
-      </p>
+      <button 
+        id="receipts-trigger"
+        class="inline-flex flex-col items-center gap-2 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors cursor-pointer group"
+      >
+        <span class="text-base md:text-lg font-semibold tracking-wide">The Receipts</span>
+        <svg class="w-5 h-5 md:w-6 md:h-6 animate-bounce group-hover:animate-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+      </button>
     </div>
   </section>
+
+  <!-- Credentials Section - Revealed on click -->
+  <section id="receipts" class="py-12 md:py-16 border-t border-gray-300 dark:border-gray-800 scroll-mt-16">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+          <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">20+</p>
+          <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">years building software</p>
+        </div>
+        <div class="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+          <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">~300</p>
+          <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">engineers AI enabled</p>
+          <p class="text-xs text-gray-500 dark:text-gray-500 mt-1">~20% productivity uplift</p>
+        </div>
+        <div class="p-4 md:p-6 rounded-xl bg-gray-50 dark:bg-gray-800/50">
+          <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">50K+</p>
+          <p class="text-sm md:text-base text-gray-600 dark:text-gray-400">MAU identity scale</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    // Smooth scroll to receipts on click
+    document.getElementById('receipts-trigger')?.addEventListener('click', () => {
+      const receiptsSection = document.getElementById('receipts');
+      if (receiptsSection) {
+        receiptsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  </script>
 </BaseLayout>
