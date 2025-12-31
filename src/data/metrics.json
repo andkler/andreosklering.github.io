@@ -47,6 +47,27 @@
       "unit": "people",
       "label": "Unique stakeholders",
       "category": "leadership"
+    },
+    {
+      "id": "architecture_reviews",
+      "value": "50+",
+      "unit": "/year",
+      "label": "Architecture reviews chaired",
+      "category": "architecture"
+    },
+    {
+      "id": "high_stakes_programs",
+      "value": "~5",
+      "unit": "/year",
+      "label": "High-stakes programs",
+      "category": "leadership"
+    },
+    {
+      "id": "ai_champions_functions",
+      "value": "6",
+      "unit": "functions",
+      "label": "Cross-functional AI impact",
+      "category": "ai"
     }
   ],
   "all": [
@@ -210,18 +231,27 @@
       "sensitivity": "public-safe",
       "method": "keyword-scan",
       "category": "feedback-themes"
-    }
-  ],
-  "todo": [
-    {
-      "id": "architecture_reviews_chaired",
-      "label": "Architecture reviews chaired per quarter",
-      "status": "pending"
     },
     {
-      "id": "high_stakes_programs_supported",
+      "id": "architecture_reviews",
+      "value": "50+",
+      "unit": "/year",
+      "label": "Architecture reviews/designs chaired with domain teams",
+      "proof_note": "Internal review tracker",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "architecture"
+    },
+    {
+      "id": "high_stakes_programs",
+      "value": "~5",
+      "unit": "/year",
       "label": "High-stakes programs supported",
-      "status": "pending"
+      "proof_note": "Cross-functional program involvement",
+      "sensitivity": "public-safe",
+      "method": "export",
+      "category": "leadership"
     }
-  ]
+  ],
+  "todo": []
 }
