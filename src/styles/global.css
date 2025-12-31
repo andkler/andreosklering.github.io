@@ -90,17 +90,34 @@
 @layer components {
   .terminal-cursor {
     display: inline-block !important;
-    width: 0.5rem;
+    width: 8px;
     height: 1.15em;
-    background-color: var(--color-cursor) !important;
-    margin-left: 0.125rem;
+    background-color: #22c55e !important;
+    margin-left: 2px;
     vertical-align: text-bottom;
     animation: blink 1s step-end infinite;
+  }
+  
+  .terminal-cursor::after {
+    content: '';
   }
   
   @keyframes blink {
     0%, 100% { opacity: 1; }
     50% { opacity: 0; }
+  }
+  
+  /* Photo - colored in light mode, grayscale in dark */
+  .photo-themed {
+    filter: grayscale(0);
+  }
+  
+  html.dark .photo-themed {
+    filter: grayscale(100%);
+  }
+  
+  html.dark .photo-themed:hover {
+    filter: grayscale(0);
   }
   
   /* Stat cards - theme aware */

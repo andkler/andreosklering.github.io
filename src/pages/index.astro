@@ -15,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <img 
           src="/images/thiago.jpg" 
           alt="Thiago Charão" 
-          class="w-20 h-20 rounded-full object-cover grayscale-0 dark:grayscale"
+          class="w-20 h-20 rounded-full object-cover photo-themed"
         />
         <div>
           <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -125,7 +125,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
               <img 
                 src="/images/thiago.jpg" 
                 alt="Thiago Charão" 
-                class="w-28 h-28 rounded-full object-cover grayscale-0 dark:grayscale dark:hover:grayscale-0 transition-all duration-300"
+                class="w-28 h-28 rounded-full object-cover photo-themed transition-all duration-300"
               />
             </div>
 
@@ -179,37 +179,44 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </div>
   </section>
 
-  <!-- The Receipts CTA - Positioned at bottom on large screens -->
-  <section class="py-4 md:py-6 lg:absolute lg:bottom-0 lg:left-0 lg:right-0 lg:pb-8">
+  </div> <!-- End of container -->
+
+  <!-- Sticky Receipts CTA - Fixed at bottom of viewport -->
+  <div 
+    id="receipts-sticky"
+    class="fixed bottom-6 left-0 right-0 z-40 pointer-events-none transition-opacity duration-300"
+  >
     <div class="max-w-4xl mx-auto px-6 text-center">
       <button 
         id="receipts-trigger"
-        class="inline-flex flex-col items-center gap-1.5 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors cursor-pointer group"
+        class="pointer-events-auto inline-flex flex-col items-center gap-1.5 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors cursor-pointer group bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg border border-gray-200 dark:border-gray-700"
       >
-        <span class="text-sm md:text-base font-semibold tracking-wide">The Receipts</span>
-        <svg class="w-4 h-4 md:w-5 md:h-5 animate-bounce group-hover:animate-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <span class="text-sm font-semibold tracking-wide">The Receipts</span>
+        <svg id="receipts-arrow" class="w-4 h-4 animate-bounce group-hover:animate-none transition-opacity duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
         </svg>
       </button>
     </div>
-  </section>
-  
-  </div> <!-- End of container -->
+  </div>
 
   <!-- Credentials Section -->
   <section id="receipts" class="py-12 md:py-16 border-t border-gray-300 dark:border-gray-800 scroll-mt-20">
     <div class="max-w-4xl mx-auto px-6 text-center">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+      <!-- Section Title - grows as you scroll -->
+      <h2 id="receipts-title" class="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-8 transition-all duration-300">
+        The Receipts
+      </h2>
+      <div id="receipts-cards" class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-600">
           <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">20+</p>
           <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">years building software</p>
         </div>
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-600">
           <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">~300</p>
           <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">engineers AI enabled</p>
           <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">~20% productivity uplift</p>
         </div>
-        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+        <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-600">
           <p class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-2">50K+</p>
           <p class="text-sm md:text-base text-gray-600 dark:text-gray-300">MAU identity scale</p>
         </div>
@@ -218,12 +225,50 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   </section>
 
   <script>
+    // Elements
+    const stickyContainer = document.getElementById('receipts-sticky');
+    const receiptsArrow = document.getElementById('receipts-arrow');
+    const receiptsTitle = document.getElementById('receipts-title');
+    const receiptsCards = document.getElementById('receipts-cards');
+    const receiptsSection = document.getElementById('receipts');
+    const receiptsTrigger = document.getElementById('receipts-trigger');
+
     // Smooth scroll to receipts on click
-    document.getElementById('receipts-trigger')?.addEventListener('click', () => {
-      const receiptsSection = document.getElementById('receipts');
+    receiptsTrigger?.addEventListener('click', () => {
       if (receiptsSection) {
         receiptsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
       }
     });
+
+    // Intersection Observer for cards visibility
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3 // 30% of cards visible
+    };
+
+    const cardsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          // Cards are visible - hide sticky button, grow title
+          stickyContainer?.classList.add('opacity-0');
+          stickyContainer?.classList.add('pointer-events-none');
+          receiptsTitle?.classList.remove('text-lg');
+          receiptsTitle?.classList.add('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
+          receiptsTitle?.classList.remove('text-gray-500', 'dark:text-gray-400');
+        } else {
+          // Cards not visible - show sticky button, shrink title
+          stickyContainer?.classList.remove('opacity-0');
+          stickyContainer?.classList.remove('pointer-events-none');
+          receiptsTitle?.classList.add('text-lg');
+          receiptsTitle?.classList.remove('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
+          receiptsTitle?.classList.add('text-gray-500', 'dark:text-gray-400');
+        }
+      });
+    }, observerOptions);
+
+    if (receiptsCards) {
+      cardsObserver.observe(receiptsCards);
+    }
   </script>
 </BaseLayout>
