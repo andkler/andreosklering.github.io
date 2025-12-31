@@ -17,7 +17,7 @@ const timeline: TimelineEntry[] = [
     year: '2024',
     title: 'Director of Architecture',
     company: 'Planet',
-    location: 'Porto, Portugal',
+    location: '',
     type: 'leadership',
     highlights: [
       'Architecture direction across platform, identity, and cross-cutting capabilities',
@@ -30,7 +30,7 @@ const timeline: TimelineEntry[] = [
     year: '2024',
     title: 'Senior Software Engineering Manager',
     company: 'Planet',
-    location: 'Porto, Portugal',
+    location: '',
     type: 'leadership',
     highlights: [
       'Strategic architecture initiatives aligned with growth goals',
@@ -42,7 +42,7 @@ const timeline: TimelineEntry[] = [
     year: '2021',
     title: 'Senior Software Engineer',
     company: 'Planet',
-    location: 'Porto, Portugal',
+    location: '',
     type: 'engineering',
     highlights: [
       'High-throughput APIs and event-driven services (AWS, Java/Spring, .NET)',
@@ -54,7 +54,7 @@ const timeline: TimelineEntry[] = [
     year: '2020',
     title: 'Senior Software Engineer',
     company: 'Basecone',
-    location: 'Porto, Portugal',
+    location: '',
     type: 'engineering',
     highlights: [
       'Document-processing workflows for accounting platform (OCR-heavy)',
@@ -66,7 +66,7 @@ const timeline: TimelineEntry[] = [
     year: '2018',
     title: 'Lead Technical Consultant',
     company: 'Farfetch',
-    location: 'Porto, Portugal',
+    location: '',
     type: 'consulting',
     highlights: [
       'Mission-critical logistics/shipping services (.NET Core)',
@@ -78,7 +78,7 @@ const timeline: TimelineEntry[] = [
     year: '2017',
     title: 'Senior Development Consultant',
     company: 'ThoughtWorks',
-    location: 'Porto Alegre, Brazil',
+    location: '',
     type: 'consulting',
     highlights: [
       'Large-scale retail initiatives (credit card + loyalty programs)',
@@ -89,7 +89,7 @@ const timeline: TimelineEntry[] = [
     year: '2016',
     title: 'Senior Software Engineer',
     company: 'Azion Technologies',
-    location: 'Porto Alegre, Brazil',
+    location: '',
     type: 'engineering',
     highlights: [
       'Platform capabilities in R&D environment',
@@ -100,7 +100,7 @@ const timeline: TimelineEntry[] = [
     year: '2014',
     title: 'Co-founder & Consultant',
     company: 'Independent',
-    location: 'Brazil / Ireland',
+    location: '',
     type: 'consulting',
     highlights: [
       'Web and mobile solutions across the stack',
@@ -111,7 +111,7 @@ const timeline: TimelineEntry[] = [
     year: '2007',
     title: 'Senior Consultant / Technical Lead',
     company: 'CWI Software',
-    location: 'Porto Alegre, Brazil',
+    location: '',
     type: 'consulting',
     highlights: [
       '7 years leading multiple client projects',
@@ -123,7 +123,7 @@ const timeline: TimelineEntry[] = [
     year: '2007',
     title: 'Software Developer',
     company: 'Drogaria Mais Econômica',
-    location: 'Canoas, Brazil',
+    location: '',
     type: 'engineering',
     highlights: [
       'Built work-order system for retail maintenance teams',
@@ -136,7 +136,7 @@ const timeline: TimelineEntry[] = [
     year: '2005',
     title: 'Software Developer',
     company: 'Grupo Telecon Sistemas',
-    location: 'Canoas, Brazil',
+    location: '',
     type: 'engineering',
     highlights: [
       'POS solutions and databases for small retailers',
@@ -255,7 +255,7 @@ const typeColors: Record<string, string> = {
                     <span class="text-xs font-mono text-gray-400 dark:text-gray-500 sm:order-last">{job.year}</span>
                     <h3 class="font-bold text-gray-900 dark:text-white">{job.title}</h3>
                   </div>
-                  <p class="text-blue-600 dark:text-accent text-sm font-medium mb-2">{job.company} <span class="text-gray-500 dark:text-gray-500">· {job.location}</span></p>
+                  <p class="text-blue-600 dark:text-accent text-sm font-medium mb-2">{job.company}</p>
                   <ul class="space-y-1">
                     {job.highlights.map((item) => (
                       <li class="text-sm text-gray-700 dark:text-gray-400 flex items-start gap-2">
