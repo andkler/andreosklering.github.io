@@ -2,7 +2,7 @@
   <rect width="32" height="32" rx="4" fill="#212020"/>
   <text x="4" y="21" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="600" fill="#9ca3af">~</text>
   <text x="12" y="21" font-family="ui-monospace, SFMono-Regular, monospace" font-size="12" font-weight="600" fill="#e5e7eb">/</text>
-  <rect x="20" y="11" width="2.5" height="11" rx="0.5" fill="#22c55e">
+  <rect x="20" y="11" width="2.5" height="11" rx="0.5" fill="#F97316">
     <animate attributeName="opacity" values="1;0;1" dur="1s" repeatCount="indefinite"/>
   </rect>
 </svg>
