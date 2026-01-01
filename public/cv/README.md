@@ -1,1 +1,1 @@
-Drop your CV PDF here as 'thiago-charao-cv.pdf'
+Drop your CV PDF here as 'andreos-klering-cv.pdf'

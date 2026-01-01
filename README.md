@@ -1,8 +1,8 @@
-# ~/charao.dev
+# ~/andreos.dev
 
-Personal site of **Thiago Charão** — Director of Architecture, building platforms that let engineers ship.
+Personal site of **Andreos Klering** — Engineering Leader & Builder, shipping products in fintech and scale-ups.
 
-**Live:** [charao.dev](https://charao.dev)
+**Live:** [andreos.dev](https://andreos.dev)
 
 ---
 
@@ -15,12 +15,12 @@ Personal site of **Thiago Charão** — Director of Architecture, building platf
 
 ## Features
 
-- ⚡ Fast, minimal, zero-JS by default
-- 🌙 Dark/Light mode toggle
-- 📱 Mobile-first responsive design
-- 🖥️ Terminal-inspired navbar aesthetic
-- 📄 Visual CV with timeline
-- 🔗 Links to DOIS.one, LinkedIn, GitHub
+- Fast, minimal, zero-JS by default
+- Dark/Light mode toggle
+- Mobile-first responsive design
+- Terminal-inspired navbar aesthetic
+- Visual CV with timeline
+- Links to DOIS.one, LinkedIn, GitHub
 
 ## Development
 
@@ -50,7 +50,8 @@ Pushes to `main` trigger automatic deployment to GitHub Pages via GitHub Actions
 src/
 ├── components/     # Reusable UI components
 ├── layouts/        # Page layouts
-├── pages/          # Routes (/, /cv)
+├── pages/          # Routes (/, /cv, /projects, /writing, /contact)
+├── data/           # JSON data files
 └── styles/         # Global CSS
 public/
 ├── images/         # Static images
@@ -59,4 +60,4 @@ public/
 
 ---
 
-*Receipts over rhetoric. Show me what ships.*
+*Ships over slides. Builder energy.*

@@ -1,0 +1,141 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import metrics from '../data/metrics.json';
+
+// Categorize metrics by type
+const impactMetrics = metrics.all.filter(m => m.category === 'impact');
+const scaleMetrics = metrics.all.filter(m => ['scale', 'leadership'].includes(m.category));
+const speedMetrics = metrics.all.filter(m => m.category === 'speed');
+const builderMetrics = metrics.all.filter(m => ['builder', 'founder', 'experience'].includes(m.category));
+---
+
+<BaseLayout title="Proof" description="How the metrics on this site are measured and validated.">
+  <section class="py-12 md:py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+        How I measure
+      </h1>
+
+      <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+        Ships over slides means showing work. Here's how each number is sourced.
+      </p>
+
+      <!-- Builder Track Record -->
+      <div class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+            <span>🔧</span> Builder Track Record
+          </h2>
+          <a href="/shipped" class="text-sm text-orange-600 dark:text-accent hover:underline">See what shipped →</a>
+        </div>
+        <div class="space-y-3">
+          {builderMetrics.map((metric) => (
+            <div class="p-4 rounded-lg bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow-sm">
+              <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-900 dark:text-white">{metric.label}</span>
+                <span class="text-xl font-bold text-orange-600 dark:text-accent">{metric.value}{metric.unit && ` ${metric.unit}`}</span>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span class="px-2 py-0.5 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300 rounded">
+                  {metric.method}
+                </span>
+                {metric.proof_note && (
+                  <span class="text-gray-500">{metric.proof_note}</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Scale & Leadership -->
+      <div class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+            <span>📈</span> Scale & Leadership
+          </h2>
+          <a href="/scale" class="text-sm text-blue-600 dark:text-blue-400 hover:underline">See the full story →</a>
+        </div>
+        <div class="space-y-3">
+          {scaleMetrics.map((metric) => (
+            <div class="p-4 rounded-lg bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow-sm">
+              <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-900 dark:text-white">{metric.label}</span>
+                <span class="text-xl font-bold text-blue-600 dark:text-blue-400">{metric.value}{metric.unit && ` ${metric.unit}`}</span>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span class="px-2 py-0.5 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded">
+                  {metric.method}
+                </span>
+                {metric.proof_note && (
+                  <span class="text-gray-500">{metric.proof_note}</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Speed & Impact -->
+      <div class="mb-10">
+        <div class="flex items-center justify-between mb-4">
+          <h2 class="text-xl font-semibold text-gray-900 dark:text-white flex items-center gap-2">
+            <span>⚡</span> Speed & Impact
+          </h2>
+          <a href="/impact" class="text-sm text-emerald-600 dark:text-emerald-400 hover:underline">See the results →</a>
+        </div>
+        <div class="space-y-3">
+          {[...speedMetrics, ...impactMetrics].map((metric) => (
+            <div class="p-4 rounded-lg bg-white dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700 shadow-sm">
+              <div class="flex justify-between items-center">
+                <span class="font-medium text-gray-900 dark:text-white">{metric.label}</span>
+                <span class="text-xl font-bold text-emerald-600 dark:text-emerald-400">{metric.value}{metric.unit && ` ${metric.unit}`}</span>
+              </div>
+              <div class="mt-2 flex flex-wrap items-center gap-2 text-xs">
+                <span class="px-2 py-0.5 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 rounded">
+                  {metric.method}
+                </span>
+                {metric.proof_note && (
+                  <span class="text-gray-500">{metric.proof_note}</span>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Footer sections -->
+      <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="grid md:grid-cols-2 gap-8">
+          <div>
+            <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-400 mb-4">What's intentionally omitted</h2>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+              <li>- Internal project codenames</li>
+              <li>- Customer or contract details</li>
+              <li>- Proprietary financial figures</li>
+              <li>- Anything that could identify individuals</li>
+            </ul>
+          </div>
+
+          <div>
+            <h2 class="text-lg font-semibold text-gray-700 dark:text-gray-400 mb-4">Notation</h2>
+            <ul class="space-y-2 text-gray-600 dark:text-gray-400 text-sm">
+              <li><code class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">~</code> — Approximate / directional</li>
+              <li><code class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">+</code> — At least / minimum</li>
+              <li><code class="bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded">></code> — More than</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <a href="/" class="inline-flex items-center gap-2 text-orange-600 dark:text-accent hover:underline">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+          </svg>
+          Back to home
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

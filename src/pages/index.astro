@@ -1,32 +1,25 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import metrics from '../data/metrics.json';
-
-const featured = metrics.featured;
-const feedback = metrics.feedback;
 ---
 
-<BaseLayout title="Home" description="Thiago Charão - Director of Architecture. Platform, Identity, and AI.">
-  <!-- Main container - relative for absolute positioning of receipts on large screens -->
-  <div class="lg:min-h-[calc(100vh-8rem)] lg:relative">
-  
+<BaseLayout title="Home" description="Andreos Klering - Engineering Leader & Builder. Fintech, SaaS, and scale-ups.">
   <!-- Hero Section -->
   <section class="py-6 md:py-8 lg:py-10">
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-5xl mx-auto px-6">
       
       <!-- Mobile: Photo + Name header -->
       <div class="flex items-center gap-4 mb-6 md:hidden">
-        <img 
-          src="/images/thiago.jpg" 
-          alt="Thiago Charão" 
-          class="w-20 h-20 rounded-full object-cover photo-themed"
+        <img
+          src="/images/andreos.jpg"
+          alt="Andreos Klering"
+          class="w-20 h-20 rounded-full object-cover"
         />
         <div>
           <h1 class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
-            Thiago Charão
+            Andreos Klering
           </h1>
           <p class="text-gray-600 dark:text-gray-400">
-            Director of Architecture
+            Engineering Leader & Builder
           </p>
         </div>
       </div>
@@ -37,26 +30,27 @@ const feedback = metrics.feedback;
           <!-- Desktop: Name header -->
           <div class="hidden md:block">
             <h1 class="text-4xl lg:text-5xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
-              Thiago Charão
+              Andreos Klering
             </h1>
             <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
-              Director of Architecture
+              Engineering Leader & Builder
             </p>
           </div>
           
           <p class="text-base md:text-lg lg:text-xl text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
-            I build and lead teams where shipping anything is a battle. 
-            I work on platform architecture, identity, and AI so engineers can move faster, 
-            ship safely, and deliver real outcomes in complex organisations.
+            I build products and teams from zero to scale.
+            I've spent 20 years shipping software in fintech, SaaS, and payments—
+            founding startups, scaling engineering orgs, and turning messy problems into working systems.
           </p>
 
           <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4 md:mb-6">
-            I've spent the last two decades moving between hands-on engineering and architecture leadership.
-            These days I focus on platform foundations (AWS, Kubernetes), identity (Auth0), and AI-enabled productivity.
+            I move between hands-on building and engineering leadership.
+            I care about speed, quality, and teams that actually ship.
+            Currently leading Growth & Customer Experience engineering at Nexar.
           </p>
 
           <p class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6 md:mb-8">
-            Strong convictions, loosely held. Receipts over rhetoric. No free lunches.
+            Builder energy. Strong opinions, loosely held. Ships over slides.
           </p>
 
           <!-- CTAs -->
@@ -77,29 +71,29 @@ const feedback = metrics.feedback;
 
           <!-- Secondary Links -->
           <div class="flex flex-wrap gap-4 md:gap-6 text-sm text-gray-600 dark:text-gray-400 mb-6 md:mb-8">
-            <a href="https://linkedin.com/in/charao" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-accent transition-colors">
+            <a href="https://linkedin.com/in/aklering" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-accent transition-colors">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
               <span class="hidden sm:inline">LinkedIn</span>
             </a>
-            <a href="https://github.com/thiagocharao" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-accent transition-colors">
+            <a href="https://github.com/andkler" target="_blank" rel="noopener" class="flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-accent transition-colors">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
               <span class="hidden sm:inline">GitHub</span>
             </a>
-            <a href="mailto:thiago@charao.dev" class="flex items-center gap-1.5 hover:text-blue-600 dark:hover:text-accent transition-colors">
+            <a href="mailto:hey@andreos.dev" class="flex items-center gap-1.5 hover:text-orange-600 dark:hover:text-accent transition-colors">
               <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M0 3v18h24v-18h-24zm21.518 2l-9.518 7.713-9.518-7.713h19.036zm-19.518 14v-11.817l10 8.104 10-8.104v11.817h-20z"/></svg>
               <span class="hidden sm:inline">Email</span>
             </a>
-            <a href="https://dois.one" target="_blank" rel="noopener" class="flex items-center gap-1.5 font-sora font-bold hover:text-blue-600 dark:hover:text-accent transition-colors">
+            <a href="https://dois.one" target="_blank" rel="noopener" class="flex items-center gap-1.5 font-sora font-bold hover:text-orange-600 dark:hover:text-accent transition-colors">
               DOIS
               <svg class="w-3 h-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
             </a>
           </div>
 
           <!-- DOIS callout -->
-          <div id="dois-callout" class="callout-box p-4 rounded-lg border mb-6 lg:mb-16">
+          <div class="callout-box p-4 rounded-lg border mb-6 lg:mb-16">
             <p class="text-sm md:text-base">
-              I co-run <a href="https://dois.one" target="_blank" rel="noopener" class="font-sora font-bold text-blue-600 dark:text-accent hover:underline">DOIS</a> where 
-              we publish experiments, notes, and opinions on engineering and AI practice.
+              I co-run <a href="https://dois.one" target="_blank" rel="noopener" class="font-sora font-bold text-orange-600 dark:text-accent hover:underline">DOIS</a> with Thiago,
+              where we publish experiments, notes, and opinions on engineering and building products.
             </p>
           </div>
 
@@ -108,15 +102,15 @@ const feedback = metrics.feedback;
             <div class="grid grid-cols-2 gap-4 text-sm mb-4">
               <div>
                 <p class="font-medium text-gray-900 dark:text-white">Location</p>
-                <p class="text-gray-600 dark:text-gray-400">Porto, Portugal</p>
+                <p class="text-gray-600 dark:text-gray-400">Portugal</p>
               </div>
               <div>
                 <p class="font-medium text-gray-900 dark:text-white">Focus</p>
-                <p class="text-gray-600 dark:text-gray-400">Architecture · Platform · AI</p>
+                <p class="text-gray-600 dark:text-gray-400">Fintech · SaaS · Scale-ups</p>
               </div>
             </div>
             <p class="text-xs text-gray-500 dark:text-gray-500 italic">
-              Coffee person. Dog person. Strong opinions, loosely held.
+              Builder at heart. Ships over slides. Strong opinions, loosely held.
             </p>
           </div>
         </div>
@@ -124,12 +118,11 @@ const feedback = metrics.feedback;
         <!-- Desktop Sidebar -->
         <div class="hidden lg:block lg:col-span-1">
           <div class="lg:sticky lg:top-8">
-            <!-- Photo - colored in light, grayscale in dark -->
             <div class="mb-6">
-              <img 
-                src="/images/thiago.jpg" 
-                alt="Thiago Charão" 
-                class="w-28 h-28 rounded-full object-cover photo-themed transition-all duration-300"
+              <img
+                src="/images/andreos.jpg"
+                alt="Andreos Klering"
+                class="w-28 h-28 rounded-full object-cover"
               />
             </div>
 
@@ -137,43 +130,43 @@ const feedback = metrics.feedback;
             <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400">
               <div>
                 <p class="font-medium text-gray-900 dark:text-white">Location</p>
-                <p>Porto, Portugal</p>
+                <p>Portugal</p>
               </div>
               <div>
                 <p class="font-medium text-gray-900 dark:text-white">Current role</p>
-                <p>Director of Architecture</p>
+                <p>Head of Engineering @ Nexar</p>
               </div>
               <div>
                 <p class="font-medium text-gray-900 dark:text-white">Focus areas</p>
-                <p>Architecture · Eng Productivity · Platform · Identity · AI</p>
+                <p>Fintech · SaaS · Payments · Scale-ups</p>
               </div>
             </div>
 
             <!-- Personal -->
             <div class="mt-6 pt-6 border-t border-gray-300 dark:border-gray-700">
               <p class="text-sm text-gray-600 dark:text-gray-400 italic mb-4">
-                Coffee person. Dog person.<br/>
-                Carries strong opinions but updates when evidence wins.
+                Builder at heart. 2x founder.<br/>
+                Strong opinions, loosely held.
               </p>
 
               <!-- What I care about -->
               <p class="font-medium text-gray-900 dark:text-white text-sm mb-2">What I care about</p>
               <ul class="space-y-1.5 text-sm text-gray-600 dark:text-gray-400">
                 <li class="flex items-start gap-2">
-                  <span class="text-blue-600 dark:text-accent">→</span>
-                  <span>Platforms that reduce friction</span>
+                  <span class="text-orange-600 dark:text-accent">→</span>
+                  <span>Shipping real products fast</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-blue-600 dark:text-accent">→</span>
-                  <span>Teams that ship real outcomes</span>
+                  <span class="text-orange-600 dark:text-accent">→</span>
+                  <span>Teams that own outcomes</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-blue-600 dark:text-accent">→</span>
-                  <span>AI that makes engineers faster</span>
+                  <span class="text-orange-600 dark:text-accent">→</span>
+                  <span>Building from zero to scale</span>
                 </li>
                 <li class="flex items-start gap-2">
-                  <span class="text-blue-600 dark:text-accent">→</span>
-                  <span>Pragmatic architecture</span>
+                  <span class="text-orange-600 dark:text-accent">→</span>
+                  <span>Quality over hype</span>
                 </li>
               </ul>
             </div>
@@ -182,151 +175,4 @@ const feedback = metrics.feedback;
       </div>
     </div>
   </section>
-
-  </div> <!-- End of container -->
-
-  <!-- Sticky Receipts CTA - Fixed at bottom of viewport -->
-  <div 
-    id="receipts-sticky"
-    class="fixed bottom-8 left-0 right-0 z-40 pointer-events-none opacity-0 transition-opacity duration-300"
-  >
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <button 
-        id="receipts-trigger"
-        class="pointer-events-auto inline-flex flex-col items-center gap-1.5 text-gray-500 dark:text-gray-400 hover:text-blue-600 dark:hover:text-accent transition-colors cursor-pointer group"
-      >
-        <span class="text-sm font-semibold tracking-wide">The Receipts</span>
-        <svg id="receipts-arrow" class="w-4 h-4 animate-bounce group-hover:animate-none" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-        </svg>
-      </button>
-    </div>
-  </div>
-
-  <!-- Credentials Section -->
-  <section id="receipts" class="py-12 md:py-16 border-t border-gray-300 dark:border-gray-800 scroll-mt-20">
-    <div class="max-w-4xl mx-auto px-6 text-center">
-      <!-- Section Title - grows as you scroll -->
-      <h2 id="receipts-title" class="text-lg font-semibold text-gray-500 dark:text-gray-400 mb-8 transition-all duration-300">
-        The Receipts
-      </h2>
-      <div id="receipts-cards" class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-6">
-        {featured.map((metric) => (
-          <div class="p-4 md:p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700">
-            <p class="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-1">
-              {metric.value}
-              {metric.unit && <span class="text-lg md:text-xl font-normal text-gray-500 dark:text-gray-400 ml-1">{metric.unit}</span>}
-            </p>
-            <p class="text-xs md:text-sm text-gray-600 dark:text-gray-300">{metric.label}</p>
-            {metric.timeframe && <p class="text-xs text-gray-500 dark:text-gray-500 mt-0.5">{metric.timeframe}</p>}
-          </div>
-        ))}
-      </div>
-      
-      <!-- Peer Feedback Card - Special treatment -->
-      <div class="mt-6 p-6 rounded-xl bg-gray-100 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700 text-left max-w-xl mx-auto">
-        <div class="flex items-baseline justify-between mb-4">
-          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">Peer Feedback</h3>
-          <span class="text-xs text-gray-500 dark:text-gray-500">{feedback.timeframe}</span>
-        </div>
-        <div class="flex gap-8 mb-4">
-          <div>
-            <p class="text-2xl font-bold text-gray-900 dark:text-white">{feedback.total_entries}</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">entries</p>
-          </div>
-          <div>
-            <p class="text-2xl font-bold text-gray-900 dark:text-white">{feedback.unique_people}</p>
-            <p class="text-xs text-gray-600 dark:text-gray-400">unique people</p>
-          </div>
-        </div>
-        <div class="border-t border-gray-200 dark:border-gray-700 pt-4">
-          <p class="text-xs text-gray-500 dark:text-gray-500 mb-2">Top themes mentioned:</p>
-          <div class="flex flex-wrap gap-2">
-            {feedback.top_themes.map((theme) => (
-              <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full bg-gray-200 dark:bg-gray-700 text-xs text-gray-700 dark:text-gray-300">
-                {theme.name} <span class="text-gray-500 dark:text-gray-400">{theme.percent}</span>
-              </span>
-            ))}
-          </div>
-        </div>
-      </div>
-      
-      <!-- Methodology link -->
-      <p class="mt-6 text-xs text-gray-500 dark:text-gray-500">
-        <a href="/proof-method" class="hover:text-blue-600 dark:hover:text-accent underline underline-offset-2">How these numbers are measured →</a>
-      </p>
-    </div>
-  </section>
-
-  <script>
-    // Elements
-    const stickyContainer = document.getElementById('receipts-sticky');
-    const receiptsTitle = document.getElementById('receipts-title');
-    const receiptsCards = document.getElementById('receipts-cards');
-    const receiptsSection = document.getElementById('receipts');
-    const receiptsTrigger = document.getElementById('receipts-trigger');
-    const doisCallout = document.getElementById('dois-callout');
-
-    // Smooth scroll to receipts on click
-    receiptsTrigger?.addEventListener('click', () => {
-      if (receiptsSection) {
-        receiptsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }
-    });
-
-    // Check if cards are visible
-    function areCardsVisible() {
-      if (!receiptsCards) return false;
-      const rect = receiptsCards.getBoundingClientRect();
-      // Cards are visible if top is within viewport
-      return rect.top < window.innerHeight - 50;
-    }
-
-    // Check if button would overlap DOIS callout
-    function wouldOverlapCallout() {
-      if (!doisCallout) return false;
-      const rect = doisCallout.getBoundingClientRect();
-      // Button is at bottom-8 (32px from bottom), needs clearance
-      // If callout bottom is below where button would sit, there's overlap
-      const buttonTop = window.innerHeight - 80; // ~80px from bottom for the button
-      return rect.bottom > buttonTop;
-    }
-
-    // Update visibility based on scroll position
-    function updateStickyVisibility() {
-      if (!stickyContainer || !receiptsTitle) return;
-      
-      const cardsVisible = areCardsVisible();
-      const overlapsCallout = wouldOverlapCallout();
-
-      // Show sticky button when:
-      // 1. Cards are NOT yet visible (there's something to scroll to)
-      // 2. Button won't overlap the DOIS callout
-      if (!cardsVisible && !overlapsCallout) {
-        stickyContainer.classList.remove('opacity-0');
-        stickyContainer.classList.add('opacity-100');
-      } else {
-        stickyContainer.classList.remove('opacity-100');
-        stickyContainer.classList.add('opacity-0');
-      }
-
-      // Update title styling - bigger when cards are in view
-      if (cardsVisible) {
-        receiptsTitle.classList.remove('text-lg', 'text-gray-500', 'dark:text-gray-400');
-        receiptsTitle.classList.add('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
-      } else {
-        receiptsTitle.classList.add('text-lg', 'text-gray-500', 'dark:text-gray-400');
-        receiptsTitle.classList.remove('text-2xl', 'md:text-3xl', 'text-gray-900', 'dark:text-white');
-      }
-    }
-
-    // Listen to scroll
-    window.addEventListener('scroll', updateStickyVisibility, { passive: true });
-    window.addEventListener('resize', updateStickyVisibility, { passive: true });
-
-    // Initial check after a tiny delay to ensure layout is complete
-    requestAnimationFrame(() => {
-      updateStickyVisibility();
-    });
-  </script>
 </BaseLayout>

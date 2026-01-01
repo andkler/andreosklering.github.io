@@ -1,0 +1,154 @@
+ANDREOS KLERING
+Engineering Leader & Builder
+
+Portugal
+hey@andreos.dev | linkedin.com/in/aklering | andreos.dev
+
+================================================================================
+SUMMARY
+================================================================================
+
+Hands-on technology leader with 20 years of end-to-end experience across engineering, product, infrastructure, and organizational scale. Proven success leading distributed teams, architecting modular platforms, and aligning engineering strategy to commercial outcomes in high-growth, API-first SaaS and fintech environments. Brings deep executional rigor, curiosity, and global experience to fast-paced companies ready to scale.
+
+================================================================================
+KEY ACHIEVEMENTS
+================================================================================
+
+- 20 years in software engineering and leadership
+- 20+ products shipped from zero across startups and scale-ups
+- 40+ engineers led at peak (Primer)
+- 2 startups founded and built (LivingOffset, TargetBeyond)
+- 3.9M MAUs served (Farfetch Identity platform)
+- Rauva Pay launched in 3 weeks with >1000% early revenue growth
+
+================================================================================
+CORE SKILLS
+================================================================================
+
+Engineering Leadership, Team Scaling, Technical Strategy, Backend Architecture, API Design, Distributed Systems, CI/CD, Developer Experience, .NET, TypeScript, AWS, Azure, Kubernetes, Fintech, Payments, SaaS, E-commerce, Identity
+
+================================================================================
+EXPERIENCE
+================================================================================
+
+HEAD OF ENGINEERING, GROWTH & CUSTOMER EXPERIENCE
+Nexar, Portugal
+May 2025 - Present
+
+- Leading two teams across B2B and B2C product lines; responsible for customer experience, growth, and marketing platforms in a high-scale vision AI company
+- Delivered tooling for marketing self-serve deployment, enabling high-velocity experimentation and increasing content throughput across campaigns
+- Ran end-to-end growth experiments testing conversion impact of product offering changes, influencing roadmap and pricing evolution
+- Structured the org around autonomy and ownership, improving delivery accountability and async productivity across remote European teams
+- Embedded observability and dev tooling practices to increase reliability while keeping development lean and adaptable
+
+HEAD OF ENGINEERING
+Rauva, Portugal
+April 2024 - April 2025
+
+- Scaled and led a 20+ engineer org across 4 squads, boosting throughput by 50% through structural redesign and agile delivery shifts
+- Launched Rauva Pay in under 3 weeks, overcame regulatory delays for a 3-month rollout, achieving 50%+ cohort adoption and >1000% revenue growth in early stages
+- Decentralized leadership via new engineering leads, cutting dependencies and increasing sprint predictability
+- Implemented DORA metrics and qualitative KPIs—test coverage, story-point accuracy—driving 66% bug reduction in one quarter
+- Shifted release cadence to iterative, decision-driven sprints; slashed lead time and empowered rapid upgrades
+- Reduced incident time via observability tooling and auto-release pipelines; modernized AWS infra to decrease third-party host costs
+- Partnered with CEO and Board to align tech roadmap with business goals and budget, preparing for scalable growth
+
+PRODUCT ENGINEERING MANAGER, FRAUD
+Inscribe, Dublin, Ireland (Remote)
+July 2023 - January 2024
+
+- Led Fraud vertical (~80% of ARR), establishing Product Engineering and AI/Research teams to double development capacity
+- Introduced prioritization framework increasing throughput 60%, focusing launches on high-value fraud prevention features
+- Shifted to AI-first detection, improving model accuracy by +5% over iterative deployments
+- Reduced lead time by 25% through efficient backlog rituals and stakeholder alignment
+- Delivered enterprise SaaS impact—closing a major financial institution deal—and enabled upsell/revenue via improved fraud accuracy
+- Enabled client wins with top fintechs like Airbase, Plaid, Ramp; drove over $300K in fraud savings for customers like Ramp and Bluevine
+
+HEAD OF ENGINEERING, COMMERCE AND PAYMENT EXPERIENCE
+Primer, London, UK (Remote)
+February 2022 - March 2023
+
+- Directed seven squads (~40 engineers), managing 50% of company output across key commerce/payments tools
+- Re-architected checkout services, accelerating feature delivery by 80%, enhancing resilience and onboarding
+- Added iterative planning and two-way decision-making—boosted velocity by 50%
+- Slashed third-party onboarding from one month to two days via developer-focused APIs/tooling
+- Embedded payment telemetry; delivered 7.5% uplift in authorization rates and 20% cost reduction
+- Authored org-wide Engineering Principles and Progression Framework
+- Orchestrated 33% org reorg without impacting deadlines
+- Built remote-first culture via hackathons and genuine-care coaching
+
+ENGINEERING MANAGER (MANAGER OF MANAGERS)
+Farfetch, Porto, Portugal
+March 2019 - February 2022
+
+- Scaled Identity & Account engineering from 1 to 4 squads (15+ staff), serving 3.9M MAUs
+- Launched unified Farfetch Login, cutting login-related support tickets by 50% and enhancing retention
+- Implemented CI/CD automation for a 90% faster release cadence with daily feature deployments
+- Reinforced platform scalability through account/catalog architecture, reducing downtime during spikes
+- Conducted R&D in Web3/NFT identity—positioned Farfetch in future identity tech
+
+SENIOR CONSULTANT
+ThoughtWorks, Brazil
+September 2018 - January 2019
+
+- Contributed to agile transformation for a leading US retailer's inventory system; improved speed and accuracy of product availability data
+- Aligned engineering processes with logistics KPIs to support regional warehouse operations
+
+FOUNDER, PRODUCT AND ENGINEERING
+LivingOffset, Dublin, Ireland
+September 2017 - December 2018
+
+- Founded and led a climate-focused tech startup leveraging blockchain to enable transparent, user-driven carbon offsetting
+- Directed all product and engineering strategy; defined vision, built roadmap, and oversaw development of web, mobile, and backend systems
+- Built and managed a 9-person cross-functional team (product, engineering, design), delivering a polished MVP and pilot program
+- Developed Ethereum-based offset tracking system integrated with verified carbon APIs, ensuring trust and traceability
+- Shaped the brand and product experience—defined visual identity, UX strategy, and public communications
+- Managed all technical operations including vendor selection, tooling, infrastructure, and release operations
+
+FOUNDER & CEO / CTO
+TargetBeyond, Brazil
+November 2012 - October 2017
+
+- Founded 20+ person consultancy delivering full-cycle platforms to clients in banking, betting, and manufacturing
+- Acted as chief architect and executive sponsor across all engagements
+- Delivered 20+ software products tailored to specific business needs; enabled ongoing partnerships
+- Built distributed engineering org across LATAM and Europe; introduced code quality and delivery standards
+- Managed vendors, infra, budget, and architecture across all accounts
+
+SENIOR FULL STACK SOFTWARE ENGINEER
+De Lage Landen, Dublin, Ireland
+November 2010 - December 2012
+
+- Contributed to global finance platform modernization, unifying data across legacy systems
+- Introduced ElasticSearch, cutting query latency by 70%
+- Led UX redesign for credit workflow; increased resolution rates by 50%
+- Rolled out CI pipelines and agile delivery—cutting cycle time by 50%
+- Instituted source control, code reviews, and quality gates; halved prod bugs
+
+FULL STACK SOFTWARE ENGINEER, R&D
+CWI Software, Brazil
+May 2007 - July 2010
+
+- Developed internal code generation tools reducing manual dev time by 90%
+- Standardized coding and database practices across projects
+- Introduced company-wide unit testing and CI systems
+- Supported senior engineers in architecture reviews and performance tuning
+
+================================================================================
+EDUCATION
+================================================================================
+
+Bachelor's degree - Information Technology
+UNISINOS, Brazil
+2007 - 2013
+Final grade 8.7/10 | Magna cum laude (Class 2013) | Top Student (Class 2013)
+
+================================================================================
+LANGUAGES
+================================================================================
+
+Portuguese (Native), English (Fluent)
+
+================================================================================
+
+Full metrics methodology: andreos.dev/proof

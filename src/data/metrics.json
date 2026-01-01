@@ -1,247 +1,179 @@
 {
   "meta": {
-    "methodology": "Dashboard exports, internal tools, keyword-based feedback analysis",
-    "note": "All metrics are public-safe. Sensitive details (programs, customers, contracts) intentionally omitted."
+    "methodology": "Career data, public metrics, and verifiable outcomes",
+    "note": "All metrics are from public sources or can be verified upon request."
   },
   "featured": [
     {
       "id": "years_experience",
-      "value": "20+",
+      "value": "20",
       "unit": "years",
       "label": "Building software",
       "category": "experience"
     },
     {
-      "id": "ai_enabled_engineers",
-      "value": "~300",
+      "id": "products_shipped",
+      "value": "20+",
+      "unit": "products",
+      "label": "Shipped from zero",
+      "category": "builder"
+    },
+    {
+      "id": "engineers_led",
+      "value": "40+",
       "unit": "engineers",
-      "label": "AI-enabled, ~20% productivity uplift",
-      "category": "ai"
-    },
-    {
-      "id": "ai_weekly_adoption",
-      "value": "40%",
-      "unit": "",
-      "label": "Weekly AI adoption rate",
-      "category": "ai"
-    },
-    {
-      "id": "identity_mau",
-      "value": "60K+",
-      "unit": "MAU",
-      "label": "Identity platform consolidation",
-      "category": "platform"
-    },
-    {
-      "id": "architecture_reviews",
-      "value": "50+",
-      "unit": "per year",
-      "label": "Architecture reviews chaired",
-      "category": "architecture"
-    },
-    {
-      "id": "high_stakes_programs",
-      "value": "~5",
-      "unit": "per year",
-      "label": "High-stakes programs supported",
+      "label": "At peak (Primer)",
       "category": "leadership"
+    },
+    {
+      "id": "startups_founded",
+      "value": "2",
+      "unit": "startups",
+      "label": "Founded & built",
+      "category": "founder"
+    },
+    {
+      "id": "scale_reached",
+      "value": "3.9M",
+      "unit": "MAU",
+      "label": "Farfetch Identity",
+      "category": "scale"
+    },
+    {
+      "id": "fastest_launch",
+      "value": "3",
+      "unit": "weeks",
+      "label": "Rauva Pay launch",
+      "category": "speed"
     }
   ],
   "feedback": {
-    "total_entries": 78,
-    "unique_people": 62,
-    "timeframe": "over the years",
-    "top_themes": [
-      { "name": "Collaboration", "percent": "78%" },
-      { "name": "Technical depth", "percent": "64%" },
-      { "name": "Innovation", "percent": "62%" },
-      { "name": "Helpful & available", "percent": "49%" },
-      { "name": "Strategic vision", "percent": "44%" },
-      { "name": "Execution", "percent": "44%" }
-    ],
-    "note": "% of feedback mentioning theme (keyword-based analysis)"
+    "total_entries": 0,
+    "unique_people": 0,
+    "timeframe": "",
+    "top_themes": [],
+    "note": "Proof section to be customized"
   },
   "all": [
     {
       "id": "years_experience",
-      "value": "20+",
+      "value": "20",
       "unit": "years",
       "label": "Years building software systems",
-      "proof_note": "Career span from 2005",
+      "proof_note": "Career span from 2007",
       "sensitivity": "public-safe",
       "method": "resume",
       "category": "experience"
     },
     {
-      "id": "ai_enabled_engineers",
-      "value": "~300",
+      "id": "products_shipped",
+      "value": "20+",
+      "unit": "products",
+      "label": "Products shipped from zero",
+      "proof_note": "TargetBeyond client platforms + other roles",
+      "sensitivity": "public-safe",
+      "method": "resume",
+      "category": "builder"
+    },
+    {
+      "id": "engineers_led",
+      "value": "40+",
       "unit": "engineers",
-      "label": "Engineers AI-enabled",
-      "proof_note": "Org-wide rollout dashboard",
+      "label": "Engineers led at peak",
+      "proof_note": "Primer - 7 squads, ~40 engineers",
       "sensitivity": "public-safe",
-      "method": "dashboard",
-      "category": "ai"
+      "method": "resume",
+      "category": "leadership"
     },
     {
-      "id": "ai_weekly_adoption",
-      "value": "40%",
-      "unit": "",
-      "label": "Weekly AI tool adoption rate",
-      "proof_note": "Copilot admin dashboard",
+      "id": "startups_founded",
+      "value": "2",
+      "unit": "startups",
+      "label": "Startups founded",
+      "proof_note": "LivingOffset (2017-2018), TargetBeyond (2012-2017)",
       "sensitivity": "public-safe",
-      "method": "dashboard",
-      "category": "ai"
+      "method": "resume",
+      "category": "founder"
     },
     {
-      "id": "ai_champions_count",
-      "value": "10+",
-      "unit": "champions",
-      "label": "AI Champions recruited",
-      "proof_note": "Internal champion network",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "ai"
-    },
-    {
-      "id": "ai_champions_functions",
-      "value": "6",
-      "unit": "functions",
-      "label": "Business functions with champions",
-      "proof_note": "Tech, HR, Finance, Ops, Legal, Commercial",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "ai"
-    },
-    {
-      "id": "identity_mau",
-      "value": "60K+",
+      "id": "scale_reached",
+      "value": "3.9M",
       "unit": "MAU",
-      "label": "Identity platform monthly active users",
-      "proof_note": "Auth0 dashboard",
+      "label": "Monthly active users served",
+      "proof_note": "Farfetch Identity platform",
       "sensitivity": "public-safe",
-      "method": "dashboard",
-      "category": "platform"
+      "method": "resume",
+      "category": "scale"
     },
     {
-      "id": "feedback_entries_total",
-      "value": "78",
-      "unit": "entries",
-      "label": "Total feedback entries",
-      "timeframe": "over the years",
-      "proof_note": "Feedback tool export",
+      "id": "fastest_launch",
+      "value": "3",
+      "unit": "weeks",
+      "label": "Fastest product launch",
+      "proof_note": "Rauva Pay - concept to production",
       "sensitivity": "public-safe",
-      "method": "export",
+      "method": "resume",
+      "category": "speed"
+    },
+    {
+      "id": "revenue_growth",
+      "value": ">1000%",
+      "unit": "",
+      "label": "Early revenue growth",
+      "proof_note": "Rauva Pay early cohorts",
+      "sensitivity": "public-safe",
+      "method": "resume",
+      "category": "impact"
+    },
+    {
+      "id": "fraud_savings",
+      "value": "$300K+",
+      "unit": "",
+      "label": "Fraud savings for customers",
+      "proof_note": "Inscribe - Ramp, Bluevine clients",
+      "sensitivity": "public-safe",
+      "method": "resume",
+      "category": "impact"
+    },
+    {
+      "id": "auth_rate_uplift",
+      "value": "7.5%",
+      "unit": "",
+      "label": "Authorization rate uplift",
+      "proof_note": "Primer payment telemetry",
+      "sensitivity": "public-safe",
+      "method": "resume",
+      "category": "impact"
+    },
+    {
+      "id": "onboarding_improvement",
+      "value": "15x",
+      "unit": "",
+      "label": "Onboarding speed improvement",
+      "proof_note": "Primer - 1 month to 2 days",
+      "sensitivity": "public-safe",
+      "method": "resume",
+      "category": "speed"
+    },
+    {
+      "id": "throughput_boost",
+      "value": "50%",
+      "unit": "",
+      "label": "Team throughput increase",
+      "proof_note": "Rauva - structural redesign",
+      "sensitivity": "public-safe",
+      "method": "resume",
       "category": "leadership"
     },
     {
-      "id": "feedback_unique_people",
-      "value": "62",
-      "unit": "people",
-      "label": "Unique people giving feedback",
-      "proof_note": "Feedback tool export",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "leadership"
-    },
-    {
-      "id": "feedback_theme_collaboration",
-      "value": "78%",
+      "id": "bug_reduction",
+      "value": "66%",
       "unit": "",
-      "label": "Collaboration theme",
-      "proof_note": "Keyword-based scan",
+      "label": "Bug reduction in one quarter",
+      "proof_note": "Rauva - DORA metrics implementation",
       "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_technical_depth",
-      "value": "64%",
-      "unit": "",
-      "label": "Technical depth theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_innovation",
-      "value": "62%",
-      "unit": "",
-      "label": "Innovation theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_helpful",
-      "value": "49%",
-      "unit": "",
-      "label": "Helpful & available theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_strategic_vision",
-      "value": "44%",
-      "unit": "",
-      "label": "Strategic vision theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_execution",
-      "value": "44%",
-      "unit": "",
-      "label": "Execution theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_positive_energy",
-      "value": "41%",
-      "unit": "",
-      "label": "Positive energy theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "feedback_theme_leadership",
-      "value": "40%",
-      "unit": "",
-      "label": "Leadership theme",
-      "proof_note": "Keyword-based scan",
-      "sensitivity": "public-safe",
-      "method": "keyword-scan",
-      "category": "feedback-themes"
-    },
-    {
-      "id": "architecture_reviews",
-      "value": "50+",
-      "unit": "per year",
-      "label": "Architecture reviews/designs chaired with domain teams",
-      "proof_note": "Internal review tracker",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "architecture"
-    },
-    {
-      "id": "high_stakes_programs",
-      "value": "~5",
-      "unit": "per year",
-      "label": "High-stakes programs supported",
-      "proof_note": "Cross-functional program involvement",
-      "sensitivity": "public-safe",
-      "method": "export",
-      "category": "leadership"
+      "method": "resume",
+      "category": "quality"
     }
   ],
   "todo": []

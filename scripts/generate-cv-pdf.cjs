@@ -474,8 +474,8 @@ const cvHTML = `
     
     <!-- Footer -->
     <div class="footer">
-      Full metrics methodology at <a href="https://charao.dev/proof-method">charao.dev/proof-method</a> · 
-      Generated from <a href="https://charao.dev">charao.dev</a>
+      Full metrics methodology at <a href="https://andreos.dev/proof">andreos.dev/proof</a> ·
+      Generated from <a href="https://andreos.dev">andreos.dev</a>
     </div>
   </div>
 </body>

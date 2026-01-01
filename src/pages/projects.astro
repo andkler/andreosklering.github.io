@@ -3,40 +3,54 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
 const projects = [
   {
-    title: 'AI Productivity Program',
-    org: 'Planet',
-    description: 'Designed and rolled out AI enablement across ~300 engineers. Built governance frameworks, workflows, and measurement systems.',
-    outcome: '~20% productivity uplift',
-    tags: ['AI', 'Governance', 'Enterprise'],
+    title: 'Rauva Pay',
+    org: 'Rauva',
+    description: 'Led the launch of Rauva Pay from concept to production in under 3 weeks. Overcame regulatory complexity for a 3-month rollout.',
+    outcome: '>1000% revenue growth',
+    tags: ['Fintech', 'Payments', 'Product Launch'],
   },
   {
-    title: 'Identity Platform',
-    org: 'Planet',
-    description: 'Auth0-based identity platform serving 50K+ monthly active users. Single sign-on, MFA, and identity governance.',
-    outcome: '50K+ MAU',
-    tags: ['Auth0', 'Identity', 'Security'],
+    title: 'Checkout Re-architecture',
+    org: 'Primer',
+    description: 'Re-architected checkout services across 7 squads (~40 engineers). Built developer-focused APIs that cut third-party onboarding from 1 month to 2 days.',
+    outcome: '80% faster delivery',
+    tags: ['Payments', 'Architecture', 'Scale'],
   },
   {
-    title: 'Internal Developer Platform',
-    org: 'Planet',
-    description: 'Platform foundations on AWS and EKS. Self-service infrastructure, CI/CD pipelines, and developer tooling.',
-    outcome: 'Reduced deploy friction',
-    tags: ['AWS', 'Kubernetes', 'Platform'],
+    title: 'Farfetch Identity Platform',
+    org: 'Farfetch',
+    description: 'Scaled Identity & Account engineering from 1 to 4 squads (15+ staff). Launched unified Farfetch Login, cutting support tickets by 50%.',
+    outcome: '3.9M MAUs',
+    tags: ['Identity', 'Scale', 'E-commerce'],
+  },
+  {
+    title: 'LivingOffset',
+    org: 'Founder',
+    description: 'Founded climate-tech startup leveraging blockchain for transparent carbon offsetting. Built 9-person team, shipped MVP with Ethereum-based tracking.',
+    outcome: 'Full product from 0',
+    tags: ['Startup', 'Blockchain', 'Climate'],
+  },
+  {
+    title: 'TargetBeyond',
+    org: 'Founder & CEO',
+    description: 'Founded 20+ person consultancy delivering full-cycle platforms to clients in banking, betting, and manufacturing across LATAM and Europe.',
+    outcome: '20+ products shipped',
+    tags: ['Consultancy', 'Founder', 'Full-stack'],
   },
   {
     title: 'DOIS',
     org: 'Side project',
-    description: 'Engineering blog and experiments with Andreos. Opinions on AI, architecture, and engineering practice.',
+    description: 'Engineering blog and experiments with Thiago. Opinions on engineering, building products, and what it takes to ship.',
     outcome: 'dois.one',
-    tags: ['Writing', 'AI', 'Engineering'],
+    tags: ['Writing', 'Engineering'],
     link: 'https://dois.one',
   },
 ];
 ---
 
-<BaseLayout title="Projects" description="Projects and work by Thiago Charão">
+<BaseLayout title="Projects" description="Projects and work by Andreos Klering">
   <section class="py-20">
-    <div class="max-w-4xl mx-auto px-6">
+    <div class="max-w-5xl mx-auto px-6">
       <div class="mb-12">
         <h1 class="text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 dark:text-white mb-4">
           Projects
@@ -51,7 +65,7 @@ const projects = [
           <div class="card group">
             <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 mb-3">
               <div>
-                <h2 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-accent transition-colors">
+                <h2 class="text-lg font-bold text-gray-900 dark:text-white group-hover:text-orange-600 dark:group-hover:text-accent transition-colors">
                   {project.link ? (
                     <a href={project.link} target="_blank" rel="noopener" class="flex items-center gap-2">
                       {project.title}
@@ -63,7 +77,7 @@ const projects = [
                     project.title
                   )}
                 </h2>
-                <p class="text-sm text-blue-600 dark:text-accent">{project.org}</p>
+                <p class="text-sm text-orange-600 dark:text-accent">{project.org}</p>
               </div>
               <span class="text-sm font-medium text-gray-900 dark:text-white whitespace-nowrap">
                 {project.outcome}

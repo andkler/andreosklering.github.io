@@ -1,0 +1,257 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+// Dimensions of Speed & Impact
+const dimensions = [
+  {
+    id: 'speed-to-market',
+    title: 'Speed to Market',
+    tagline: 'Shipping fast when it matters most',
+    color: 'orange',
+    stories: [
+      {
+        company: 'Rauva',
+        period: '2024',
+        headline: 'Rauva Pay: Concept to production in 3 weeks',
+        context: 'The business needed a payment product to unlock revenue—yesterday. Regulatory approval was uncertain, competitors were moving. I assembled a tiger team, cut scope to essentials, and we shipped Rauva Pay in 3 weeks. Regulatory approval took another 3 months, but we were ready. The result: 50%+ cohort adoption and >1000% early revenue growth.',
+        before: 'No payment product',
+        after: '3 weeks to launch',
+        delta: '>1000% revenue growth',
+        insight: 'Speed isn\'t about rushing—it\'s about knowing what to cut.',
+      },
+      {
+        company: 'Primer',
+        period: '2022',
+        headline: 'Third-party onboarding cut from 1 month to 2 days',
+        context: 'Payment processors needed extensive back-and-forth to integrate with Primer—documentation gaps, manual configurations, endless support tickets. Built developer-focused APIs, self-serve tooling, and clear integration guides. Partners could now go live in 2 days instead of a month.',
+        before: '1 month',
+        after: '2 days',
+        delta: '15x faster',
+        insight: 'Developer experience is a business multiplier.',
+      },
+      {
+        company: 'Farfetch',
+        period: '2020',
+        headline: 'From weekly releases to daily deployments',
+        context: 'Releases were ceremonial—scheduled, feared, often delayed. Engineers spent more time coordinating than coding. Implemented automated CI/CD pipelines, testing gates, and deployment tooling. Within months, we moved to daily feature deployments. Engineers shipped with confidence.',
+        before: 'Weekly releases',
+        after: 'Daily deploys',
+        delta: '90% faster',
+        insight: 'Fix the release process and everything downstream improves.',
+      },
+    ],
+  },
+  {
+    id: 'removing-friction',
+    title: 'Removing Friction',
+    tagline: 'Eliminating blockers that slow teams and customers down',
+    color: 'blue',
+    stories: [
+      {
+        company: 'Farfetch',
+        period: '2021',
+        headline: 'Unified login cut support tickets by 50%',
+        context: 'Customers had different credentials across Farfetch properties. Login issues were the #1 support driver. Launched unified Farfetch Login—one account, everywhere. Support tickets dropped 50%. Customer retention improved. Engineering stopped firefighting auth bugs.',
+        before: 'Fragmented logins',
+        after: 'Single sign-on',
+        delta: '50% fewer tickets',
+        insight: 'Sometimes the biggest win is removing a problem entirely.',
+      },
+      {
+        company: 'Primer',
+        period: '2022',
+        headline: 'Checkout re-architecture: 80% faster feature delivery',
+        context: 'The checkout codebase had accumulated years of complexity. Every feature took longer than it should. Led a re-architecture across 7 squads. New modular structure, clear boundaries, better abstractions. Feature delivery accelerated 80%. Engineers could reason about the system again.',
+        before: 'Tangled codebase',
+        after: 'Modular architecture',
+        delta: '80% faster delivery',
+        insight: 'Technical debt isn\'t theoretical—it shows up in delivery speed.',
+      },
+      {
+        company: 'Rauva',
+        period: '2024',
+        headline: 'DORA metrics drove 66% bug reduction',
+        context: 'Quality was inconsistent. Bugs escaped to production, eroding trust. Introduced DORA metrics and quality KPIs—test coverage, story-point accuracy, lead time. Made quality visible. Within one quarter, bugs dropped 66%. Predictability improved. The team took ownership.',
+        before: 'Inconsistent quality',
+        after: 'Measured quality',
+        delta: '66% fewer bugs',
+        insight: 'You can\'t improve what you don\'t measure.',
+      },
+    ],
+  },
+  {
+    id: 'business-results',
+    title: 'Business Results',
+    tagline: 'Engineering that moves the needle',
+    color: 'emerald',
+    stories: [
+      {
+        company: 'Inscribe',
+        period: '2023',
+        headline: 'AI-first fraud detection: $300K+ customer savings',
+        context: 'Led the Fraud vertical—~80% of Inscribe\'s ARR. Shifted to AI-first detection, improving model accuracy by 5%. The improvement wasn\'t just technical—it enabled customer wins with Ramp, Bluevine, Airbase. Customers reported $300K+ in fraud savings. Closed a major financial institution deal.',
+        before: 'Rule-based detection',
+        after: 'AI-first detection',
+        delta: '$300K+ saved',
+        insight: 'Technical improvements only matter if customers feel them.',
+      },
+      {
+        company: 'Primer',
+        period: '2022',
+        headline: 'Payment telemetry: 7.5% auth uplift + 20% cost reduction',
+        context: 'Merchants couldn\'t see why payments failed. Built payment telemetry that exposed authorization patterns, failure reasons, and optimization opportunities. Merchants saw 7.5% uplift in authorization rates and 20% reduction in payment costs. Data turned into dollars.',
+        before: 'Blind to failures',
+        after: 'Full visibility',
+        delta: '7.5% auth uplift',
+        insight: 'Observability isn\'t overhead—it\'s a revenue lever.',
+      },
+      {
+        company: 'De Lage Landen',
+        period: '2010–2012',
+        headline: 'ElasticSearch migration: 70% query latency reduction',
+        context: 'Global finance platform with legacy data systems. Queries were slow, users frustrated. Introduced ElasticSearch, redesigned the credit workflow UX. Query latency dropped 70%. Resolution rates increased 50%. Early lesson in how infrastructure work creates user impact.',
+        before: 'Slow queries',
+        after: 'Real-time search',
+        delta: '70% faster',
+        insight: 'Infrastructure work has UX consequences.',
+      },
+    ],
+  },
+];
+
+const colorClasses: Record<string, { bg: string; border: string; text: string; accent: string; delta: string }> = {
+  orange: {
+    bg: 'bg-orange-50 dark:bg-orange-900/20',
+    border: 'border-orange-200 dark:border-orange-800',
+    text: 'text-orange-700 dark:text-orange-300',
+    accent: 'bg-orange-500',
+    delta: 'text-orange-600 dark:text-orange-400',
+  },
+  blue: {
+    bg: 'bg-blue-50 dark:bg-blue-900/20',
+    border: 'border-blue-200 dark:border-blue-800',
+    text: 'text-blue-700 dark:text-blue-300',
+    accent: 'bg-blue-500',
+    delta: 'text-blue-600 dark:text-blue-400',
+  },
+  emerald: {
+    bg: 'bg-emerald-50 dark:bg-emerald-900/20',
+    border: 'border-emerald-200 dark:border-emerald-800',
+    text: 'text-emerald-700 dark:text-emerald-300',
+    accent: 'bg-emerald-500',
+    delta: 'text-emerald-600 dark:text-emerald-400',
+  },
+};
+---
+
+<BaseLayout title="Impact" description="Measurable business impact from Andreos Klering's engineering leadership.">
+  <section class="py-12 md:py-16">
+    <div class="max-w-5xl mx-auto px-6">
+      <div class="mb-12">
+        <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+          Impact
+        </h1>
+        <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
+          Engineering creates value when it ships. Here's how speed, friction removal, and technical improvements
+          translated into measurable business results.
+        </p>
+      </div>
+
+      <!-- Quick Stats Bar -->
+      <div class="grid grid-cols-4 gap-3 mb-10">
+        <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+          <p class="text-2xl md:text-3xl font-bold text-orange-600 dark:text-orange-400">3</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Weeks to launch</p>
+        </div>
+        <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+          <p class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">15x</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Faster onboarding</p>
+        </div>
+        <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+          <p class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400">$300K+</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Customer savings</p>
+        </div>
+        <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
+          <p class="text-2xl md:text-3xl font-bold text-violet-600 dark:text-violet-400">>1000%</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Revenue growth</p>
+        </div>
+      </div>
+
+      <!-- Dimensions -->
+      <div class="space-y-10">
+        {dimensions.map((dimension) => {
+          const colors = colorClasses[dimension.color];
+          return (
+            <div id={dimension.id}>
+              <!-- Dimension Header -->
+              <div class="mb-4">
+                <div class="flex items-center gap-3 mb-2">
+                  <div class={`w-3 h-3 rounded-full ${colors.accent}`}></div>
+                  <h2 class="text-2xl font-bold text-gray-900 dark:text-white">
+                    {dimension.title}
+                  </h2>
+                </div>
+                <p class="text-gray-600 dark:text-gray-400 text-lg ml-6">
+                  {dimension.tagline}
+                </p>
+              </div>
+
+              <!-- Stories -->
+              <div class="space-y-4">
+                {dimension.stories.map((story) => (
+                  <div class={`p-5 rounded-2xl border-2 ${colors.border} ${colors.bg}`}>
+                    <!-- Top Bar: Company + Before/After -->
+                    <div class="flex items-center justify-between gap-4 mb-3">
+                      <div class="flex items-center gap-2">
+                        <p class={`text-sm font-semibold ${colors.text}`}>{story.company}</p>
+                        <span class="text-gray-400">·</span>
+                        <p class="text-sm text-gray-500 dark:text-gray-400">{story.period}</p>
+                      </div>
+                      <div class="flex items-center gap-3 text-sm">
+                        <span class="text-gray-500 dark:text-gray-400">{story.before}</span>
+                        <span class="text-gray-400">→</span>
+                        <span class="font-bold text-gray-900 dark:text-white">{story.after}</span>
+                        <span class={`font-bold ${colors.delta} ml-2`}>{story.delta}</span>
+                      </div>
+                    </div>
+
+                    <!-- Headline -->
+                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                      {story.headline}
+                    </h3>
+
+                    <!-- Context -->
+                    <p class="text-sm text-gray-700 dark:text-gray-300 leading-relaxed mb-3">
+                      {story.context}
+                    </p>
+
+                    <!-- Insight -->
+                    <p class="text-sm text-gray-500 dark:text-gray-400 italic border-t border-gray-200 dark:border-gray-700 pt-3">
+                      "{story.insight}"
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <!-- Navigation -->
+      <div class="mt-16 pt-8 border-t border-gray-200 dark:border-gray-700">
+        <div class="flex flex-wrap items-center justify-between gap-4">
+          <a href="/" class="inline-flex items-center gap-2 text-orange-600 dark:text-accent hover:underline">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+            </svg>
+            Back to home
+          </a>
+          <div class="flex items-center gap-4 text-sm">
+            <a href="/scale" class="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-accent">← Scale</a>
+            <a href="/shipped" class="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-accent">Shipped →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
