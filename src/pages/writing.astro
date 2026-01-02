@@ -1,8 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// No articles hosted here - writing happens on DOIS and LinkedIn
-const articles: { title: string; description: string; date: string; category: string; link?: string }[] = [];
+// Featured LinkedIn articles
+const articles: { title: string; description: string; date: string; category: string; link?: string }[] = [
+  {
+    title: 'Leading Product Engineering in the AI Era',
+    description: 'AI changes how we scope, plan, and execute. Modern leadership is about steering intent, not micromanaging motion.',
+    date: '2024',
+    category: 'Article',
+    link: 'https://www.linkedin.com/pulse/leading-product-engineering-ai-era-andreos-klering-v0iof/'
+  },
+  {
+    title: 'From Months to Days: What Happens When the Build Cycle Collapses',
+    description: 'Building got easier, but being an impactful builder got harder. The discipline of saying no becomes existential.',
+    date: '2024',
+    category: 'Article',
+    link: 'https://www.linkedin.com/pulse/from-months-days-what-happens-when-build-cycle-andreos-klering-9g2bf/'
+  },
+  {
+    title: 'The Triangle That Builds Great Teams',
+    description: 'Autonomy, ownership, and accountability must work together. When isolated, each breaks down.',
+    date: '2024',
+    category: 'Article',
+    link: 'https://www.linkedin.com/pulse/triangle-builds-great-teams-autonomy-ownership-andreos-klering-wcqpf/'
+  }
+];
 ---
 
 <BaseLayout title="Writing" description="Articles, notes, and opinions by Andreos Klering">

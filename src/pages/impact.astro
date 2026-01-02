@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 
-// Dimensions of Speed & Impact
+// Consolidated Impact & Scale stories
 const dimensions = [
   {
     id: 'speed-to-market',
@@ -42,10 +42,58 @@ const dimensions = [
     ],
   },
   {
+    id: 'building-scaling',
+    title: 'Building & Scaling Teams',
+    tagline: 'From zero to org scale without losing speed',
+    color: 'blue',
+    stories: [
+      {
+        company: 'Primer',
+        period: '2022–2023',
+        headline: 'Directed 7 squads, ~40 engineers, 50% of company output',
+        context: 'Led Commerce and Payment Experience—the largest engineering group at Primer. Re-architected checkout services to accelerate feature delivery by 80%. Authored engineering principles and progression framework adopted company-wide. Orchestrated a 33% org restructure without impacting delivery timelines.',
+        before: 'Fragmented teams',
+        after: '7 squads aligned',
+        delta: '40+ engineers',
+        insight: 'Manager-of-managers craft: two-way decisions, remote-first culture.',
+      },
+      {
+        company: 'Farfetch',
+        period: '2019–2022',
+        headline: 'Grew Identity engineering from 1 to 4 squads',
+        context: 'Inherited a single team responsible for authentication and account management. Over three years, scaled to 4 squads with 15+ engineers. The platform grew to serve 3.9 million monthly active users. Launched unified Farfetch Login, reducing login-related support tickets by 50%.',
+        before: '1 squad',
+        after: '4 squads',
+        delta: '3.9M MAUs',
+        insight: 'Hiring senior engineers, creating autonomy while maintaining coherence.',
+      },
+      {
+        company: 'Rauva',
+        period: '2024–2025',
+        headline: 'Restructured 20+ engineer org for 50% throughput boost',
+        context: 'Joined as Head of Engineering to fix delivery bottlenecks. Decentralized leadership by promoting engineering leads. Shifted to iterative, decision-driven sprints. Implemented DORA metrics and quality KPIs. Result: 50% increase in team throughput and 66% bug reduction in one quarter.',
+        before: 'Bottlenecked org',
+        after: 'Decentralized leads',
+        delta: '50% more throughput',
+        insight: 'Sometimes the fix is structure, not headcount.',
+      },
+      {
+        company: 'TargetBeyond',
+        period: '2012–2017',
+        headline: 'Founded and scaled a 20+ person consultancy',
+        context: 'Started as a solo freelancer. Built a distributed engineering organization across Brazil, Argentina, and Portugal. Delivered 20+ software products to clients in banking, betting, and manufacturing. Managed everything: hiring, architecture, vendors, budgets, and client relationships.',
+        before: 'Solo freelancer',
+        after: '20+ person org',
+        delta: '20+ products shipped',
+        insight: 'How to build trust with clients, hire across borders, and deliver under constraints.',
+      },
+    ],
+  },
+  {
     id: 'removing-friction',
     title: 'Removing Friction',
     tagline: 'Eliminating blockers that slow teams and customers down',
-    color: 'blue',
+    color: 'emerald',
     stories: [
       {
         company: 'Farfetch',
@@ -68,14 +116,14 @@ const dimensions = [
         insight: 'Technical debt isn\'t theoretical—it shows up in delivery speed.',
       },
       {
-        company: 'Rauva',
-        period: '2024',
-        headline: 'DORA metrics drove 66% bug reduction',
-        context: 'Quality was inconsistent. Bugs escaped to production, eroding trust. Introduced DORA metrics and quality KPIs—test coverage, story-point accuracy, lead time. Made quality visible. Within one quarter, bugs dropped 66%. Predictability improved. The team took ownership.',
-        before: 'Inconsistent quality',
-        after: 'Measured quality',
-        delta: '66% fewer bugs',
-        insight: 'You can\'t improve what you don\'t measure.',
+        company: 'CWI Software',
+        period: '2007–2010',
+        headline: 'Code generation tools cut dev time by 90%',
+        context: 'Early in career, noticed repetitive boilerplate across projects. Created internal tools that auto-generated standard code patterns. Introduced company-wide unit testing and CI. Started the habit of building tools that multiply team output.',
+        before: 'Manual boilerplate',
+        after: 'Auto-generated',
+        delta: '90% time saved',
+        insight: 'Tooling mindset—always look for the repeatable problem.',
       },
     ],
   },
@@ -83,7 +131,7 @@ const dimensions = [
     id: 'business-results',
     title: 'Business Results',
     tagline: 'Engineering that moves the needle',
-    color: 'emerald',
+    color: 'violet',
     stories: [
       {
         company: 'Inscribe',
@@ -141,10 +189,17 @@ const colorClasses: Record<string, { bg: string; border: string; text: string; a
     accent: 'bg-emerald-500',
     delta: 'text-emerald-600 dark:text-emerald-400',
   },
+  violet: {
+    bg: 'bg-violet-50 dark:bg-violet-900/20',
+    border: 'border-violet-200 dark:border-violet-800',
+    text: 'text-violet-700 dark:text-violet-300',
+    accent: 'bg-violet-500',
+    delta: 'text-violet-600 dark:text-violet-400',
+  },
 };
 ---
 
-<BaseLayout title="Impact" description="Measurable business impact from Andreos Klering's engineering leadership.">
+<BaseLayout title="Impact" description="20 years of building teams, shipping products, and delivering measurable business results.">
   <section class="py-12 md:py-16">
     <div class="max-w-5xl mx-auto px-6">
       <div class="mb-12">
@@ -152,20 +207,20 @@ const colorClasses: Record<string, { bg: string; border: string; text: string; a
           Impact
         </h1>
         <p class="text-lg text-gray-600 dark:text-gray-400 max-w-3xl">
-          Engineering creates value when it ships. Here's how speed, friction removal, and technical improvements
-          translated into measurable business results.
+          20 years of building teams from zero, scaling organizations, and shipping products that move the needle.
+          Here's the track record.
         </p>
       </div>
 
       <!-- Quick Stats Bar -->
       <div class="grid grid-cols-4 gap-3 mb-10">
         <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-          <p class="text-2xl md:text-3xl font-bold text-orange-600 dark:text-orange-400">3</p>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Weeks to launch</p>
+          <p class="text-2xl md:text-3xl font-bold text-orange-600 dark:text-orange-400">40+</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">Engineers led</p>
         </div>
         <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
-          <p class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">15x</p>
-          <p class="text-xs text-gray-600 dark:text-gray-400">Faster onboarding</p>
+          <p class="text-2xl md:text-3xl font-bold text-blue-600 dark:text-blue-400">3.9M</p>
+          <p class="text-xs text-gray-600 dark:text-gray-400">MAUs served</p>
         </div>
         <div class="text-center p-4 rounded-xl bg-gray-100 dark:bg-gray-800/50 border border-gray-200 dark:border-gray-700">
           <p class="text-2xl md:text-3xl font-bold text-emerald-600 dark:text-emerald-400">$300K+</p>
@@ -246,10 +301,9 @@ const colorClasses: Record<string, { bg: string; border: string; text: string; a
             </svg>
             Back to home
           </a>
-          <div class="flex items-center gap-4 text-sm">
-            <a href="/scale" class="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-accent">← Scale</a>
-            <a href="/shipped" class="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-accent">Shipped →</a>
-          </div>
+          <a href="/shipped" class="text-gray-600 dark:text-gray-400 hover:text-orange-600 dark:hover:text-accent text-sm">
+            See timeline →
+          </a>
         </div>
       </div>
     </div>
